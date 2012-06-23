@@ -18,8 +18,8 @@ namespace BayHelper.Com.Controllers
 
         public ViewResult Index()
         {
-            var es = db.Events.Include(e => e.Address).Include(e => e.User);
-            return View(es.ToList());
+            var events = db.Events.Include(e => e.Address).Include(e => e.User);
+            return View(events.ToList());
         }
 
         //
@@ -36,9 +36,13 @@ namespace BayHelper.Com.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress");
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress1");
             ViewBag.Creator = new SelectList(db.Users, "UserID", "LastName");
-            return View();
+            var e = new Event
+            {
+                Address = new Address()
+            };
+            return View(e);
         } 
 
         //
@@ -54,7 +58,7 @@ namespace BayHelper.Com.Controllers
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress", e.AddressID);
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress1", e.AddressID);
             ViewBag.Creator = new SelectList(db.Users, "UserID", "LastName", e.Creator);
             return View(e);
         }
@@ -65,7 +69,7 @@ namespace BayHelper.Com.Controllers
         public ActionResult Edit(int id)
         {
             Event e = db.Events.Find(id);
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress", e.AddressID);
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress1", e.AddressID);
             ViewBag.Creator = new SelectList(db.Users, "UserID", "LastName", e.Creator);
             return View(e);
         }
@@ -82,7 +86,7 @@ namespace BayHelper.Com.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress", e.AddressID);
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress1", e.AddressID);
             ViewBag.Creator = new SelectList(db.Users, "UserID", "LastName", e.Creator);
             return View(e);
         }

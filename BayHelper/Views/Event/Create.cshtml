@@ -1,0 +1,100 @@
+﻿@model BayHelper.Com.Models.Event
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Event</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateStarted)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateStarted)
+            @Html.ValidationMessageFor(model => model.DateStarted)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DueDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DueDate)
+            @Html.ValidationMessageFor(model => model.DueDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FinanceGoal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FinanceGoal)
+            @Html.ValidationMessageFor(model => model.FinanceGoal)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AddressID, "Address")
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address.StreetAddress1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address.StreetAddress1)
+            @Html.ValidationMessageFor(model => model.Address.StreetAddress1)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address.StreetAddress1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address.StreetAddress2)
+            @Html.ValidationMessageFor(model => model.Address.StreetAddress2)
+        </div>
+        
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Creator, "User")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Creator", String.Empty)
+            @Html.ValidationMessageFor(model => model.Creator)
+        </div>
+        
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

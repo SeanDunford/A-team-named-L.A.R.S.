@@ -27,7 +27,7 @@ namespace BayHelper.Com.Models
         public string Description { get; set; }
         public Nullable<System.DateTime> DateStarted { get; set; }
         public Nullable<System.DateTime> DueDate { get; set; }
-        public string Status { get; set; }
+        public Nullable<byte> Status { get; set; }
         public Nullable<int> FinanceGoal { get; set; }
         public Nullable<int> AddressID { get; set; }
         public Nullable<int> Creator { get; set; }

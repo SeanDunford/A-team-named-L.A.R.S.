@@ -4,80 +4,80 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="bayhelperModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="bayhelperModelStoreContainer">
-          <EntitySet Name="Addresses" EntityType="bayhelperModel.Store.Addresses" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Comments" EntityType="bayhelperModel.Store.Comments" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Events" EntityType="bayhelperModel.Store.Events" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="FinanceDonations" EntityType="bayhelperModel.Store.FinanceDonations" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Messages" EntityType="bayhelperModel.Store.Messages" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Organizations" EntityType="bayhelperModel.Store.Organizations" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ResourceDonations" EntityType="bayhelperModel.Store.ResourceDonations" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Resources" EntityType="bayhelperModel.Store.Resources" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Tasks" EntityType="bayhelperModel.Store.Tasks" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TimeDonations" EntityType="bayhelperModel.Store.TimeDonations" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Users" EntityType="bayhelperModel.Store.Users" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_Comment_Event" Association="bayhelperModel.Store.FK_Comment_Event">
+      <Schema Namespace="BayHelperModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BayHelperModelStoreContainer">
+          <EntitySet Name="Addresses" EntityType="BayHelperModel.Store.Addresses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Comments" EntityType="BayHelperModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Events" EntityType="BayHelperModel.Store.Events" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FinanceDonations" EntityType="BayHelperModel.Store.FinanceDonations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Messages" EntityType="BayHelperModel.Store.Messages" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Organizations" EntityType="BayHelperModel.Store.Organizations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ResourceDonations" EntityType="BayHelperModel.Store.ResourceDonations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Resources" EntityType="BayHelperModel.Store.Resources" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tasks" EntityType="BayHelperModel.Store.Tasks" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TimeDonations" EntityType="BayHelperModel.Store.TimeDonations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="BayHelperModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Comment_Event" Association="BayHelperModel.Store.FK_Comment_Event">
             <End Role="Events" EntitySet="Events" />
             <End Role="Comments" EntitySet="Comments" />
           </AssociationSet>
-          <AssociationSet Name="FK_Comment_User" Association="bayhelperModel.Store.FK_Comment_User">
+          <AssociationSet Name="FK_Comment_User" Association="BayHelperModel.Store.FK_Comment_User">
             <End Role="Users" EntitySet="Users" />
             <End Role="Comments" EntitySet="Comments" />
           </AssociationSet>
-          <AssociationSet Name="FK_Event_Address" Association="bayhelperModel.Store.FK_Event_Address">
+          <AssociationSet Name="FK_Event_Address" Association="BayHelperModel.Store.FK_Event_Address">
             <End Role="Addresses" EntitySet="Addresses" />
             <End Role="Events" EntitySet="Events" />
           </AssociationSet>
-          <AssociationSet Name="FK_Event_User" Association="bayhelperModel.Store.FK_Event_User">
+          <AssociationSet Name="FK_Event_User" Association="BayHelperModel.Store.FK_Event_User">
             <End Role="Users" EntitySet="Users" />
             <End Role="Events" EntitySet="Events" />
           </AssociationSet>
-          <AssociationSet Name="FK_FinanceDonation_Event" Association="bayhelperModel.Store.FK_FinanceDonation_Event">
+          <AssociationSet Name="FK_FinanceDonation_Event" Association="BayHelperModel.Store.FK_FinanceDonation_Event">
             <End Role="Events" EntitySet="Events" />
             <End Role="FinanceDonations" EntitySet="FinanceDonations" />
           </AssociationSet>
-          <AssociationSet Name="FK_FinanceDonation_User" Association="bayhelperModel.Store.FK_FinanceDonation_User">
+          <AssociationSet Name="FK_FinanceDonation_User" Association="BayHelperModel.Store.FK_FinanceDonation_User">
             <End Role="Users" EntitySet="Users" />
             <End Role="FinanceDonations" EntitySet="FinanceDonations" />
           </AssociationSet>
-          <AssociationSet Name="FK_Message_User" Association="bayhelperModel.Store.FK_Message_User">
+          <AssociationSet Name="FK_Message_User" Association="BayHelperModel.Store.FK_Message_User">
             <End Role="Users" EntitySet="Users" />
             <End Role="Messages" EntitySet="Messages" />
           </AssociationSet>
-          <AssociationSet Name="FK_Message_User1" Association="bayhelperModel.Store.FK_Message_User1">
+          <AssociationSet Name="FK_Message_User1" Association="BayHelperModel.Store.FK_Message_User1">
             <End Role="Users" EntitySet="Users" />
             <End Role="Messages" EntitySet="Messages" />
           </AssociationSet>
-          <AssociationSet Name="FK_Resource_Event" Association="bayhelperModel.Store.FK_Resource_Event">
+          <AssociationSet Name="FK_Resource_Event" Association="BayHelperModel.Store.FK_Resource_Event">
             <End Role="Events" EntitySet="Events" />
             <End Role="Resources" EntitySet="Resources" />
           </AssociationSet>
-          <AssociationSet Name="FK_ResourceDonation_Resource" Association="bayhelperModel.Store.FK_ResourceDonation_Resource">
+          <AssociationSet Name="FK_ResourceDonation_Resource" Association="BayHelperModel.Store.FK_ResourceDonation_Resource">
             <End Role="Resources" EntitySet="Resources" />
             <End Role="ResourceDonations" EntitySet="ResourceDonations" />
           </AssociationSet>
-          <AssociationSet Name="FK_ResourceDonation_User" Association="bayhelperModel.Store.FK_ResourceDonation_User">
+          <AssociationSet Name="FK_ResourceDonation_User" Association="BayHelperModel.Store.FK_ResourceDonation_User">
             <End Role="Users" EntitySet="Users" />
             <End Role="ResourceDonations" EntitySet="ResourceDonations" />
           </AssociationSet>
-          <AssociationSet Name="FK_Task_Event" Association="bayhelperModel.Store.FK_Task_Event">
+          <AssociationSet Name="FK_Task_Event" Association="BayHelperModel.Store.FK_Task_Event">
             <End Role="Events" EntitySet="Events" />
             <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
-          <AssociationSet Name="FK_TimeDonation_Task" Association="bayhelperModel.Store.FK_TimeDonation_Task">
+          <AssociationSet Name="FK_TimeDonation_Task" Association="BayHelperModel.Store.FK_TimeDonation_Task">
             <End Role="Tasks" EntitySet="Tasks" />
             <End Role="TimeDonations" EntitySet="TimeDonations" />
           </AssociationSet>
-          <AssociationSet Name="FK_TimeDonation_User" Association="bayhelperModel.Store.FK_TimeDonation_User">
+          <AssociationSet Name="FK_TimeDonation_User" Association="BayHelperModel.Store.FK_TimeDonation_User">
             <End Role="Users" EntitySet="Users" />
             <End Role="TimeDonations" EntitySet="TimeDonations" />
           </AssociationSet>
-          <AssociationSet Name="FK_User_Address" Association="bayhelperModel.Store.FK_User_Address">
+          <AssociationSet Name="FK_User_Address" Association="BayHelperModel.Store.FK_User_Address">
             <End Role="Addresses" EntitySet="Addresses" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK_User_Organization" Association="bayhelperModel.Store.FK_User_Organization">
+          <AssociationSet Name="FK_User_Organization" Association="BayHelperModel.Store.FK_User_Organization">
             <End Role="Organizations" EntitySet="Organizations" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
@@ -87,8 +87,8 @@
             <PropertyRef Name="AddressID" />
           </Key>
           <Property Name="AddressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="StreetAddress" Type="varchar" MaxLength="200" />
-          <Property Name="Apt" Type="varchar" MaxLength="10" />
+          <Property Name="StreetAddress1" Type="varchar" MaxLength="200" />
+          <Property Name="StreetAddress2" Type="varchar" MaxLength="10" />
           <Property Name="City" Type="varchar" MaxLength="100" />
           <Property Name="Zip" Type="varchar" MaxLength="10" />
           <Property Name="State" Type="varchar" MaxLength="2" />
@@ -114,7 +114,7 @@
           <Property Name="Description" Type="varchar" MaxLength="2500" />
           <Property Name="DateStarted" Type="datetime" />
           <Property Name="DueDate" Type="datetime" />
-          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="tinyint" />
           <Property Name="FinanceGoal" Type="int" />
           <Property Name="AddressID" Type="int" />
           <Property Name="Creator" Type="int" />
@@ -206,10 +206,10 @@
           <Property Name="OrganizationID" Type="int" />
         </EntityType>
         <Association Name="FK_Comment_Event">
-          <End Role="Events" Type="bayhelperModel.Store.Events" Multiplicity="0..1">
+          <End Role="Events" Type="BayHelperModel.Store.Events" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Comments" Type="bayhelperModel.Store.Comments" Multiplicity="*" />
+          <End Role="Comments" Type="BayHelperModel.Store.Comments" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Events">
               <PropertyRef Name="EventID" />
@@ -220,8 +220,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Comment_User">
-          <End Role="Users" Type="bayhelperModel.Store.Users" Multiplicity="0..1" />
-          <End Role="Comments" Type="bayhelperModel.Store.Comments" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.Store.Users" Multiplicity="0..1" />
+          <End Role="Comments" Type="BayHelperModel.Store.Comments" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -232,8 +232,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Event_Address">
-          <End Role="Addresses" Type="bayhelperModel.Store.Addresses" Multiplicity="0..1" />
-          <End Role="Events" Type="bayhelperModel.Store.Events" Multiplicity="*" />
+          <End Role="Addresses" Type="BayHelperModel.Store.Addresses" Multiplicity="0..1" />
+          <End Role="Events" Type="BayHelperModel.Store.Events" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Addresses">
               <PropertyRef Name="AddressID" />
@@ -244,8 +244,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Event_User">
-          <End Role="Users" Type="bayhelperModel.Store.Users" Multiplicity="0..1" />
-          <End Role="Events" Type="bayhelperModel.Store.Events" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.Store.Users" Multiplicity="0..1" />
+          <End Role="Events" Type="BayHelperModel.Store.Events" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -256,10 +256,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FinanceDonation_Event">
-          <End Role="Events" Type="bayhelperModel.Store.Events" Multiplicity="0..1">
+          <End Role="Events" Type="BayHelperModel.Store.Events" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="FinanceDonations" Type="bayhelperModel.Store.FinanceDonations" Multiplicity="*" />
+          <End Role="FinanceDonations" Type="BayHelperModel.Store.FinanceDonations" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Events">
               <PropertyRef Name="EventID" />
@@ -270,8 +270,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FinanceDonation_User">
-          <End Role="Users" Type="bayhelperModel.Store.Users" Multiplicity="0..1" />
-          <End Role="FinanceDonations" Type="bayhelperModel.Store.FinanceDonations" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.Store.Users" Multiplicity="0..1" />
+          <End Role="FinanceDonations" Type="BayHelperModel.Store.FinanceDonations" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -282,8 +282,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Message_User">
-          <End Role="Users" Type="bayhelperModel.Store.Users" Multiplicity="0..1" />
-          <End Role="Messages" Type="bayhelperModel.Store.Messages" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.Store.Users" Multiplicity="0..1" />
+          <End Role="Messages" Type="BayHelperModel.Store.Messages" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -294,8 +294,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Message_User1">
-          <End Role="Users" Type="bayhelperModel.Store.Users" Multiplicity="0..1" />
-          <End Role="Messages" Type="bayhelperModel.Store.Messages" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.Store.Users" Multiplicity="0..1" />
+          <End Role="Messages" Type="BayHelperModel.Store.Messages" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -306,10 +306,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Resource_Event">
-          <End Role="Events" Type="bayhelperModel.Store.Events" Multiplicity="0..1">
+          <End Role="Events" Type="BayHelperModel.Store.Events" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Resources" Type="bayhelperModel.Store.Resources" Multiplicity="*" />
+          <End Role="Resources" Type="BayHelperModel.Store.Resources" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Events">
               <PropertyRef Name="EventID" />
@@ -320,10 +320,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ResourceDonation_Resource">
-          <End Role="Resources" Type="bayhelperModel.Store.Resources" Multiplicity="0..1">
+          <End Role="Resources" Type="BayHelperModel.Store.Resources" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="ResourceDonations" Type="bayhelperModel.Store.ResourceDonations" Multiplicity="*" />
+          <End Role="ResourceDonations" Type="BayHelperModel.Store.ResourceDonations" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Resources">
               <PropertyRef Name="ResourceID" />
@@ -334,8 +334,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ResourceDonation_User">
-          <End Role="Users" Type="bayhelperModel.Store.Users" Multiplicity="0..1" />
-          <End Role="ResourceDonations" Type="bayhelperModel.Store.ResourceDonations" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.Store.Users" Multiplicity="0..1" />
+          <End Role="ResourceDonations" Type="BayHelperModel.Store.ResourceDonations" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -346,10 +346,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Task_Event">
-          <End Role="Events" Type="bayhelperModel.Store.Events" Multiplicity="0..1">
+          <End Role="Events" Type="BayHelperModel.Store.Events" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Tasks" Type="bayhelperModel.Store.Tasks" Multiplicity="*" />
+          <End Role="Tasks" Type="BayHelperModel.Store.Tasks" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Events">
               <PropertyRef Name="EventID" />
@@ -360,10 +360,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TimeDonation_Task">
-          <End Role="Tasks" Type="bayhelperModel.Store.Tasks" Multiplicity="0..1">
+          <End Role="Tasks" Type="BayHelperModel.Store.Tasks" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="TimeDonations" Type="bayhelperModel.Store.TimeDonations" Multiplicity="*" />
+          <End Role="TimeDonations" Type="BayHelperModel.Store.TimeDonations" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tasks">
               <PropertyRef Name="TaskID" />
@@ -374,8 +374,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TimeDonation_User">
-          <End Role="Users" Type="bayhelperModel.Store.Users" Multiplicity="0..1" />
-          <End Role="TimeDonations" Type="bayhelperModel.Store.TimeDonations" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.Store.Users" Multiplicity="0..1" />
+          <End Role="TimeDonations" Type="BayHelperModel.Store.TimeDonations" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -386,8 +386,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Address">
-          <End Role="Addresses" Type="bayhelperModel.Store.Addresses" Multiplicity="0..1" />
-          <End Role="Users" Type="bayhelperModel.Store.Users" Multiplicity="*" />
+          <End Role="Addresses" Type="BayHelperModel.Store.Addresses" Multiplicity="0..1" />
+          <End Role="Users" Type="BayHelperModel.Store.Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Addresses">
               <PropertyRef Name="AddressID" />
@@ -398,8 +398,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Organization">
-          <End Role="Organizations" Type="bayhelperModel.Store.Organizations" Multiplicity="0..1" />
-          <End Role="Users" Type="bayhelperModel.Store.Users" Multiplicity="*" />
+          <End Role="Organizations" Type="BayHelperModel.Store.Organizations" Multiplicity="0..1" />
+          <End Role="Users" Type="BayHelperModel.Store.Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Organizations">
               <PropertyRef Name="OrganizationID" />
@@ -413,80 +413,80 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="bayhelperModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <Schema Namespace="BayHelperModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="BayHelperEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Addresses" EntityType="bayhelperModel.Address" />
-          <EntitySet Name="Comments" EntityType="bayhelperModel.Comment" />
-          <EntitySet Name="Events" EntityType="bayhelperModel.Event" />
-          <EntitySet Name="FinanceDonations" EntityType="bayhelperModel.FinanceDonation" />
-          <EntitySet Name="Messages" EntityType="bayhelperModel.Message" />
-          <EntitySet Name="Organizations" EntityType="bayhelperModel.Organization" />
-          <EntitySet Name="ResourceDonations" EntityType="bayhelperModel.ResourceDonation" />
-          <EntitySet Name="Resources" EntityType="bayhelperModel.Resource" />
-          <EntitySet Name="Tasks" EntityType="bayhelperModel.Task" />
-          <EntitySet Name="TimeDonations" EntityType="bayhelperModel.TimeDonation" />
-          <EntitySet Name="Users" EntityType="bayhelperModel.User" />
-          <AssociationSet Name="FK_Event_Address" Association="bayhelperModel.FK_Event_Address">
+          <EntitySet Name="Addresses" EntityType="BayHelperModel.Address" />
+          <EntitySet Name="Comments" EntityType="BayHelperModel.Comment" />
+          <EntitySet Name="Events" EntityType="BayHelperModel.Event" />
+          <EntitySet Name="FinanceDonations" EntityType="BayHelperModel.FinanceDonation" />
+          <EntitySet Name="Messages" EntityType="BayHelperModel.Message" />
+          <EntitySet Name="Organizations" EntityType="BayHelperModel.Organization" />
+          <EntitySet Name="ResourceDonations" EntityType="BayHelperModel.ResourceDonation" />
+          <EntitySet Name="Resources" EntityType="BayHelperModel.Resource" />
+          <EntitySet Name="Tasks" EntityType="BayHelperModel.Task" />
+          <EntitySet Name="TimeDonations" EntityType="BayHelperModel.TimeDonation" />
+          <EntitySet Name="Users" EntityType="BayHelperModel.User" />
+          <AssociationSet Name="FK_Event_Address" Association="BayHelperModel.FK_Event_Address">
             <End Role="Addresses" EntitySet="Addresses" />
             <End Role="Events" EntitySet="Events" />
           </AssociationSet>
-          <AssociationSet Name="FK_User_Address" Association="bayhelperModel.FK_User_Address">
+          <AssociationSet Name="FK_User_Address" Association="BayHelperModel.FK_User_Address">
             <End Role="Addresses" EntitySet="Addresses" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK_Comment_Event" Association="bayhelperModel.FK_Comment_Event">
+          <AssociationSet Name="FK_Comment_Event" Association="BayHelperModel.FK_Comment_Event">
             <End Role="Events" EntitySet="Events" />
             <End Role="Comments" EntitySet="Comments" />
           </AssociationSet>
-          <AssociationSet Name="FK_Comment_User" Association="bayhelperModel.FK_Comment_User">
+          <AssociationSet Name="FK_Comment_User" Association="BayHelperModel.FK_Comment_User">
             <End Role="Users" EntitySet="Users" />
             <End Role="Comments" EntitySet="Comments" />
           </AssociationSet>
-          <AssociationSet Name="FK_Event_User" Association="bayhelperModel.FK_Event_User">
+          <AssociationSet Name="FK_Event_User" Association="BayHelperModel.FK_Event_User">
             <End Role="Users" EntitySet="Users" />
             <End Role="Events" EntitySet="Events" />
           </AssociationSet>
-          <AssociationSet Name="FK_FinanceDonation_Event" Association="bayhelperModel.FK_FinanceDonation_Event">
+          <AssociationSet Name="FK_FinanceDonation_Event" Association="BayHelperModel.FK_FinanceDonation_Event">
             <End Role="Events" EntitySet="Events" />
             <End Role="FinanceDonations" EntitySet="FinanceDonations" />
           </AssociationSet>
-          <AssociationSet Name="FK_Resource_Event" Association="bayhelperModel.FK_Resource_Event">
+          <AssociationSet Name="FK_Resource_Event" Association="BayHelperModel.FK_Resource_Event">
             <End Role="Events" EntitySet="Events" />
             <End Role="Resources" EntitySet="Resources" />
           </AssociationSet>
-          <AssociationSet Name="FK_Task_Event" Association="bayhelperModel.FK_Task_Event">
+          <AssociationSet Name="FK_Task_Event" Association="BayHelperModel.FK_Task_Event">
             <End Role="Events" EntitySet="Events" />
             <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
-          <AssociationSet Name="FK_FinanceDonation_User" Association="bayhelperModel.FK_FinanceDonation_User">
+          <AssociationSet Name="FK_FinanceDonation_User" Association="BayHelperModel.FK_FinanceDonation_User">
             <End Role="Users" EntitySet="Users" />
             <End Role="FinanceDonations" EntitySet="FinanceDonations" />
           </AssociationSet>
-          <AssociationSet Name="FK_Message_User" Association="bayhelperModel.FK_Message_User">
+          <AssociationSet Name="FK_Message_User" Association="BayHelperModel.FK_Message_User">
             <End Role="Users" EntitySet="Users" />
             <End Role="Messages" EntitySet="Messages" />
           </AssociationSet>
-          <AssociationSet Name="FK_Message_User1" Association="bayhelperModel.FK_Message_User1">
+          <AssociationSet Name="FK_Message_User1" Association="BayHelperModel.FK_Message_User1">
             <End Role="Users" EntitySet="Users" />
             <End Role="Messages" EntitySet="Messages" />
           </AssociationSet>
-          <AssociationSet Name="FK_User_Organization" Association="bayhelperModel.FK_User_Organization">
+          <AssociationSet Name="FK_User_Organization" Association="BayHelperModel.FK_User_Organization">
             <End Role="Organizations" EntitySet="Organizations" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK_ResourceDonation_Resource" Association="bayhelperModel.FK_ResourceDonation_Resource">
+          <AssociationSet Name="FK_ResourceDonation_Resource" Association="BayHelperModel.FK_ResourceDonation_Resource">
             <End Role="Resources" EntitySet="Resources" />
             <End Role="ResourceDonations" EntitySet="ResourceDonations" />
           </AssociationSet>
-          <AssociationSet Name="FK_ResourceDonation_User" Association="bayhelperModel.FK_ResourceDonation_User">
+          <AssociationSet Name="FK_ResourceDonation_User" Association="BayHelperModel.FK_ResourceDonation_User">
             <End Role="Users" EntitySet="Users" />
             <End Role="ResourceDonations" EntitySet="ResourceDonations" />
           </AssociationSet>
-          <AssociationSet Name="FK_TimeDonation_Task" Association="bayhelperModel.FK_TimeDonation_Task">
+          <AssociationSet Name="FK_TimeDonation_Task" Association="BayHelperModel.FK_TimeDonation_Task">
             <End Role="Tasks" EntitySet="Tasks" />
             <End Role="TimeDonations" EntitySet="TimeDonations" />
           </AssociationSet>
-          <AssociationSet Name="FK_TimeDonation_User" Association="bayhelperModel.FK_TimeDonation_User">
+          <AssociationSet Name="FK_TimeDonation_User" Association="BayHelperModel.FK_TimeDonation_User">
             <End Role="Users" EntitySet="Users" />
             <End Role="TimeDonations" EntitySet="TimeDonations" />
           </AssociationSet>
@@ -496,13 +496,13 @@
             <PropertyRef Name="AddressID" />
           </Key>
           <Property Name="AddressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="StreetAddress" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
-          <Property Name="Apt" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="StreetAddress1" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="StreetAddress2" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="City" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="Zip" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="State" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Events" Relationship="bayhelperModel.FK_Event_Address" FromRole="Addresses" ToRole="Events" />
-          <NavigationProperty Name="Users" Relationship="bayhelperModel.FK_User_Address" FromRole="Addresses" ToRole="Users" />
+          <NavigationProperty Name="Events" Relationship="BayHelperModel.FK_Event_Address" FromRole="Addresses" ToRole="Events" />
+          <NavigationProperty Name="Users" Relationship="BayHelperModel.FK_User_Address" FromRole="Addresses" ToRole="Users" />
         </EntityType>
         <EntityType Name="Comment">
           <Key>
@@ -515,8 +515,8 @@
           <Property Name="UserID" Type="Int32" />
           <Property Name="EventID" Type="Int32" />
           <Property Name="Rating" Type="Int32" />
-          <NavigationProperty Name="Event" Relationship="bayhelperModel.FK_Comment_Event" FromRole="Comments" ToRole="Events" />
-          <NavigationProperty Name="User" Relationship="bayhelperModel.FK_Comment_User" FromRole="Comments" ToRole="Users" />
+          <NavigationProperty Name="Event" Relationship="BayHelperModel.FK_Comment_Event" FromRole="Comments" ToRole="Events" />
+          <NavigationProperty Name="User" Relationship="BayHelperModel.FK_Comment_User" FromRole="Comments" ToRole="Users" />
         </EntityType>
         <EntityType Name="Event">
           <Key>
@@ -527,16 +527,16 @@
           <Property Name="Description" Type="String" MaxLength="2500" Unicode="false" FixedLength="false" />
           <Property Name="DateStarted" Type="DateTime" />
           <Property Name="DueDate" Type="DateTime" />
-          <Property Name="Status" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Byte" />
           <Property Name="FinanceGoal" Type="Int32" />
           <Property Name="AddressID" Type="Int32" />
           <Property Name="Creator" Type="Int32" />
-          <NavigationProperty Name="Address" Relationship="bayhelperModel.FK_Event_Address" FromRole="Events" ToRole="Addresses" />
-          <NavigationProperty Name="Comments" Relationship="bayhelperModel.FK_Comment_Event" FromRole="Events" ToRole="Comments" />
-          <NavigationProperty Name="User" Relationship="bayhelperModel.FK_Event_User" FromRole="Events" ToRole="Users" />
-          <NavigationProperty Name="FinanceDonations" Relationship="bayhelperModel.FK_FinanceDonation_Event" FromRole="Events" ToRole="FinanceDonations" />
-          <NavigationProperty Name="Resources" Relationship="bayhelperModel.FK_Resource_Event" FromRole="Events" ToRole="Resources" />
-          <NavigationProperty Name="Tasks" Relationship="bayhelperModel.FK_Task_Event" FromRole="Events" ToRole="Tasks" />
+          <NavigationProperty Name="Address" Relationship="BayHelperModel.FK_Event_Address" FromRole="Events" ToRole="Addresses" />
+          <NavigationProperty Name="Comments" Relationship="BayHelperModel.FK_Comment_Event" FromRole="Events" ToRole="Comments" />
+          <NavigationProperty Name="User" Relationship="BayHelperModel.FK_Event_User" FromRole="Events" ToRole="Users" />
+          <NavigationProperty Name="FinanceDonations" Relationship="BayHelperModel.FK_FinanceDonation_Event" FromRole="Events" ToRole="FinanceDonations" />
+          <NavigationProperty Name="Resources" Relationship="BayHelperModel.FK_Resource_Event" FromRole="Events" ToRole="Resources" />
+          <NavigationProperty Name="Tasks" Relationship="BayHelperModel.FK_Task_Event" FromRole="Events" ToRole="Tasks" />
         </EntityType>
         <EntityType Name="FinanceDonation">
           <Key>
@@ -546,8 +546,8 @@
           <Property Name="EventID" Type="Int32" />
           <Property Name="UserID" Type="Int32" />
           <Property Name="Amount" Type="Int32" />
-          <NavigationProperty Name="Event" Relationship="bayhelperModel.FK_FinanceDonation_Event" FromRole="FinanceDonations" ToRole="Events" />
-          <NavigationProperty Name="User" Relationship="bayhelperModel.FK_FinanceDonation_User" FromRole="FinanceDonations" ToRole="Users" />
+          <NavigationProperty Name="Event" Relationship="BayHelperModel.FK_FinanceDonation_Event" FromRole="FinanceDonations" ToRole="Events" />
+          <NavigationProperty Name="User" Relationship="BayHelperModel.FK_FinanceDonation_User" FromRole="FinanceDonations" ToRole="Users" />
         </EntityType>
         <EntityType Name="Message">
           <Key>
@@ -558,8 +558,8 @@
           <Property Name="Description" Type="String" MaxLength="2500" Unicode="false" FixedLength="false" />
           <Property Name="Sender" Type="Int32" />
           <Property Name="Recepient" Type="Int32" />
-          <NavigationProperty Name="User" Relationship="bayhelperModel.FK_Message_User" FromRole="Messages" ToRole="Users" />
-          <NavigationProperty Name="User1" Relationship="bayhelperModel.FK_Message_User1" FromRole="Messages" ToRole="Users" />
+          <NavigationProperty Name="User" Relationship="BayHelperModel.FK_Message_User" FromRole="Messages" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="BayHelperModel.FK_Message_User1" FromRole="Messages" ToRole="Users" />
         </EntityType>
         <EntityType Name="Organization">
           <Key>
@@ -570,7 +570,7 @@
           <Property Name="Description" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
           <Property Name="Rating" Type="Int32" />
           <Property Name="DateRegistered" Type="DateTime" />
-          <NavigationProperty Name="Users" Relationship="bayhelperModel.FK_User_Organization" FromRole="Organizations" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="BayHelperModel.FK_User_Organization" FromRole="Organizations" ToRole="Users" />
         </EntityType>
         <EntityType Name="ResourceDonation">
           <Key>
@@ -581,8 +581,8 @@
           <Property Name="UserID" Type="Int32" />
           <Property Name="Amount" Type="Int32" />
           <Property Name="Location" Type="Int32" />
-          <NavigationProperty Name="Resource" Relationship="bayhelperModel.FK_ResourceDonation_Resource" FromRole="ResourceDonations" ToRole="Resources" />
-          <NavigationProperty Name="User" Relationship="bayhelperModel.FK_ResourceDonation_User" FromRole="ResourceDonations" ToRole="Users" />
+          <NavigationProperty Name="Resource" Relationship="BayHelperModel.FK_ResourceDonation_Resource" FromRole="ResourceDonations" ToRole="Resources" />
+          <NavigationProperty Name="User" Relationship="BayHelperModel.FK_ResourceDonation_User" FromRole="ResourceDonations" ToRole="Users" />
         </EntityType>
         <EntityType Name="Resource">
           <Key>
@@ -593,8 +593,8 @@
           <Property Name="Units" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="AmountRequired" Type="Int32" />
           <Property Name="EventID" Type="Int32" />
-          <NavigationProperty Name="Event" Relationship="bayhelperModel.FK_Resource_Event" FromRole="Resources" ToRole="Events" />
-          <NavigationProperty Name="ResourceDonations" Relationship="bayhelperModel.FK_ResourceDonation_Resource" FromRole="Resources" ToRole="ResourceDonations" />
+          <NavigationProperty Name="Event" Relationship="BayHelperModel.FK_Resource_Event" FromRole="Resources" ToRole="Events" />
+          <NavigationProperty Name="ResourceDonations" Relationship="BayHelperModel.FK_ResourceDonation_Resource" FromRole="Resources" ToRole="ResourceDonations" />
         </EntityType>
         <EntityType Name="Task">
           <Key>
@@ -606,8 +606,8 @@
           <Property Name="TimeEstimate" Type="Int32" />
           <Property Name="FinanceEstimate" Type="Int32" />
           <Property Name="EventID" Type="Int32" />
-          <NavigationProperty Name="Event" Relationship="bayhelperModel.FK_Task_Event" FromRole="Tasks" ToRole="Events" />
-          <NavigationProperty Name="TimeDonations" Relationship="bayhelperModel.FK_TimeDonation_Task" FromRole="Tasks" ToRole="TimeDonations" />
+          <NavigationProperty Name="Event" Relationship="BayHelperModel.FK_Task_Event" FromRole="Tasks" ToRole="Events" />
+          <NavigationProperty Name="TimeDonations" Relationship="BayHelperModel.FK_TimeDonation_Task" FromRole="Tasks" ToRole="TimeDonations" />
         </EntityType>
         <EntityType Name="TimeDonation">
           <Key>
@@ -619,8 +619,8 @@
           <Property Name="Amount" Type="Int32" />
           <Property Name="Date" Type="DateTime" />
           <Property Name="Status" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="Task" Relationship="bayhelperModel.FK_TimeDonation_Task" FromRole="TimeDonations" ToRole="Tasks" />
-          <NavigationProperty Name="User" Relationship="bayhelperModel.FK_TimeDonation_User" FromRole="TimeDonations" ToRole="Users" />
+          <NavigationProperty Name="Task" Relationship="BayHelperModel.FK_TimeDonation_Task" FromRole="TimeDonations" ToRole="Tasks" />
+          <NavigationProperty Name="User" Relationship="BayHelperModel.FK_TimeDonation_User" FromRole="TimeDonations" ToRole="Users" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -636,19 +636,19 @@
           <Property Name="DateRegistered" Type="DateTime" />
           <Property Name="OrganizationUser" Type="Boolean" />
           <Property Name="OrganizationID" Type="Int32" />
-          <NavigationProperty Name="Address" Relationship="bayhelperModel.FK_User_Address" FromRole="Users" ToRole="Addresses" />
-          <NavigationProperty Name="Comments" Relationship="bayhelperModel.FK_Comment_User" FromRole="Users" ToRole="Comments" />
-          <NavigationProperty Name="Events" Relationship="bayhelperModel.FK_Event_User" FromRole="Users" ToRole="Events" />
-          <NavigationProperty Name="FinanceDonations" Relationship="bayhelperModel.FK_FinanceDonation_User" FromRole="Users" ToRole="FinanceDonations" />
-          <NavigationProperty Name="Messages" Relationship="bayhelperModel.FK_Message_User" FromRole="Users" ToRole="Messages" />
-          <NavigationProperty Name="Messages1" Relationship="bayhelperModel.FK_Message_User1" FromRole="Users" ToRole="Messages" />
-          <NavigationProperty Name="Organization" Relationship="bayhelperModel.FK_User_Organization" FromRole="Users" ToRole="Organizations" />
-          <NavigationProperty Name="ResourceDonations" Relationship="bayhelperModel.FK_ResourceDonation_User" FromRole="Users" ToRole="ResourceDonations" />
-          <NavigationProperty Name="TimeDonations" Relationship="bayhelperModel.FK_TimeDonation_User" FromRole="Users" ToRole="TimeDonations" />
+          <NavigationProperty Name="Address" Relationship="BayHelperModel.FK_User_Address" FromRole="Users" ToRole="Addresses" />
+          <NavigationProperty Name="Comments" Relationship="BayHelperModel.FK_Comment_User" FromRole="Users" ToRole="Comments" />
+          <NavigationProperty Name="Events" Relationship="BayHelperModel.FK_Event_User" FromRole="Users" ToRole="Events" />
+          <NavigationProperty Name="FinanceDonations" Relationship="BayHelperModel.FK_FinanceDonation_User" FromRole="Users" ToRole="FinanceDonations" />
+          <NavigationProperty Name="Messages" Relationship="BayHelperModel.FK_Message_User" FromRole="Users" ToRole="Messages" />
+          <NavigationProperty Name="Messages1" Relationship="BayHelperModel.FK_Message_User1" FromRole="Users" ToRole="Messages" />
+          <NavigationProperty Name="Organization" Relationship="BayHelperModel.FK_User_Organization" FromRole="Users" ToRole="Organizations" />
+          <NavigationProperty Name="ResourceDonations" Relationship="BayHelperModel.FK_ResourceDonation_User" FromRole="Users" ToRole="ResourceDonations" />
+          <NavigationProperty Name="TimeDonations" Relationship="BayHelperModel.FK_TimeDonation_User" FromRole="Users" ToRole="TimeDonations" />
         </EntityType>
         <Association Name="FK_Event_Address">
-          <End Role="Addresses" Type="bayhelperModel.Address" Multiplicity="0..1" />
-          <End Role="Events" Type="bayhelperModel.Event" Multiplicity="*" />
+          <End Role="Addresses" Type="BayHelperModel.Address" Multiplicity="0..1" />
+          <End Role="Events" Type="BayHelperModel.Event" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Addresses">
               <PropertyRef Name="AddressID" />
@@ -659,8 +659,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Address">
-          <End Role="Addresses" Type="bayhelperModel.Address" Multiplicity="0..1" />
-          <End Role="Users" Type="bayhelperModel.User" Multiplicity="*" />
+          <End Role="Addresses" Type="BayHelperModel.Address" Multiplicity="0..1" />
+          <End Role="Users" Type="BayHelperModel.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Addresses">
               <PropertyRef Name="AddressID" />
@@ -671,10 +671,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Comment_Event">
-          <End Role="Events" Type="bayhelperModel.Event" Multiplicity="0..1">
+          <End Role="Events" Type="BayHelperModel.Event" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Comments" Type="bayhelperModel.Comment" Multiplicity="*" />
+          <End Role="Comments" Type="BayHelperModel.Comment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Events">
               <PropertyRef Name="EventID" />
@@ -685,8 +685,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Comment_User">
-          <End Role="Users" Type="bayhelperModel.User" Multiplicity="0..1" />
-          <End Role="Comments" Type="bayhelperModel.Comment" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.User" Multiplicity="0..1" />
+          <End Role="Comments" Type="BayHelperModel.Comment" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -697,8 +697,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Event_User">
-          <End Role="Users" Type="bayhelperModel.User" Multiplicity="0..1" />
-          <End Role="Events" Type="bayhelperModel.Event" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.User" Multiplicity="0..1" />
+          <End Role="Events" Type="BayHelperModel.Event" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -709,10 +709,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FinanceDonation_Event">
-          <End Role="Events" Type="bayhelperModel.Event" Multiplicity="0..1">
+          <End Role="Events" Type="BayHelperModel.Event" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="FinanceDonations" Type="bayhelperModel.FinanceDonation" Multiplicity="*" />
+          <End Role="FinanceDonations" Type="BayHelperModel.FinanceDonation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Events">
               <PropertyRef Name="EventID" />
@@ -723,10 +723,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Resource_Event">
-          <End Role="Events" Type="bayhelperModel.Event" Multiplicity="0..1">
+          <End Role="Events" Type="BayHelperModel.Event" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Resources" Type="bayhelperModel.Resource" Multiplicity="*" />
+          <End Role="Resources" Type="BayHelperModel.Resource" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Events">
               <PropertyRef Name="EventID" />
@@ -737,10 +737,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Task_Event">
-          <End Role="Events" Type="bayhelperModel.Event" Multiplicity="0..1">
+          <End Role="Events" Type="BayHelperModel.Event" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Tasks" Type="bayhelperModel.Task" Multiplicity="*" />
+          <End Role="Tasks" Type="BayHelperModel.Task" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Events">
               <PropertyRef Name="EventID" />
@@ -751,8 +751,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_FinanceDonation_User">
-          <End Role="Users" Type="bayhelperModel.User" Multiplicity="0..1" />
-          <End Role="FinanceDonations" Type="bayhelperModel.FinanceDonation" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.User" Multiplicity="0..1" />
+          <End Role="FinanceDonations" Type="BayHelperModel.FinanceDonation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -763,8 +763,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Message_User">
-          <End Role="Users" Type="bayhelperModel.User" Multiplicity="0..1" />
-          <End Role="Messages" Type="bayhelperModel.Message" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.User" Multiplicity="0..1" />
+          <End Role="Messages" Type="BayHelperModel.Message" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -775,8 +775,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Message_User1">
-          <End Role="Users" Type="bayhelperModel.User" Multiplicity="0..1" />
-          <End Role="Messages" Type="bayhelperModel.Message" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.User" Multiplicity="0..1" />
+          <End Role="Messages" Type="BayHelperModel.Message" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -787,8 +787,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_User_Organization">
-          <End Role="Organizations" Type="bayhelperModel.Organization" Multiplicity="0..1" />
-          <End Role="Users" Type="bayhelperModel.User" Multiplicity="*" />
+          <End Role="Organizations" Type="BayHelperModel.Organization" Multiplicity="0..1" />
+          <End Role="Users" Type="BayHelperModel.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Organizations">
               <PropertyRef Name="OrganizationID" />
@@ -799,10 +799,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ResourceDonation_Resource">
-          <End Role="Resources" Type="bayhelperModel.Resource" Multiplicity="0..1">
+          <End Role="Resources" Type="BayHelperModel.Resource" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="ResourceDonations" Type="bayhelperModel.ResourceDonation" Multiplicity="*" />
+          <End Role="ResourceDonations" Type="BayHelperModel.ResourceDonation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Resources">
               <PropertyRef Name="ResourceID" />
@@ -813,8 +813,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ResourceDonation_User">
-          <End Role="Users" Type="bayhelperModel.User" Multiplicity="0..1" />
-          <End Role="ResourceDonations" Type="bayhelperModel.ResourceDonation" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.User" Multiplicity="0..1" />
+          <End Role="ResourceDonations" Type="BayHelperModel.ResourceDonation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -825,10 +825,10 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TimeDonation_Task">
-          <End Role="Tasks" Type="bayhelperModel.Task" Multiplicity="0..1">
+          <End Role="Tasks" Type="BayHelperModel.Task" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="TimeDonations" Type="bayhelperModel.TimeDonation" Multiplicity="*" />
+          <End Role="TimeDonations" Type="BayHelperModel.TimeDonation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tasks">
               <PropertyRef Name="TaskID" />
@@ -839,8 +839,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TimeDonation_User">
-          <End Role="Users" Type="bayhelperModel.User" Multiplicity="0..1" />
-          <End Role="TimeDonations" Type="bayhelperModel.TimeDonation" Multiplicity="*" />
+          <End Role="Users" Type="BayHelperModel.User" Multiplicity="0..1" />
+          <End Role="TimeDonations" Type="BayHelperModel.TimeDonation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -855,16 +855,16 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="bayhelperModelStoreContainer" CdmEntityContainer="BayHelperEntities">
-          <EntitySetMapping Name="Addresses"><EntityTypeMapping TypeName="bayhelperModel.Address"><MappingFragment StoreEntitySet="Addresses">
+        <EntityContainerMapping StorageEntityContainer="BayHelperModelStoreContainer" CdmEntityContainer="BayHelperEntities">
+          <EntitySetMapping Name="Addresses"><EntityTypeMapping TypeName="BayHelperModel.Address"><MappingFragment StoreEntitySet="Addresses">
             <ScalarProperty Name="AddressID" ColumnName="AddressID" />
-            <ScalarProperty Name="StreetAddress" ColumnName="StreetAddress" />
-            <ScalarProperty Name="Apt" ColumnName="Apt" />
+            <ScalarProperty Name="StreetAddress1" ColumnName="StreetAddress1" />
+            <ScalarProperty Name="StreetAddress2" ColumnName="StreetAddress2" />
             <ScalarProperty Name="City" ColumnName="City" />
             <ScalarProperty Name="Zip" ColumnName="Zip" />
             <ScalarProperty Name="State" ColumnName="State" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Comments"><EntityTypeMapping TypeName="bayhelperModel.Comment"><MappingFragment StoreEntitySet="Comments">
+          <EntitySetMapping Name="Comments"><EntityTypeMapping TypeName="BayHelperModel.Comment"><MappingFragment StoreEntitySet="Comments">
             <ScalarProperty Name="CommentID" ColumnName="CommentID" />
             <ScalarProperty Name="Title" ColumnName="Title" />
             <ScalarProperty Name="Description" ColumnName="Description" />
@@ -873,7 +873,7 @@
             <ScalarProperty Name="EventID" ColumnName="EventID" />
             <ScalarProperty Name="Rating" ColumnName="Rating" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Events"><EntityTypeMapping TypeName="bayhelperModel.Event"><MappingFragment StoreEntitySet="Events">
+          <EntitySetMapping Name="Events"><EntityTypeMapping TypeName="BayHelperModel.Event"><MappingFragment StoreEntitySet="Events">
             <ScalarProperty Name="EventID" ColumnName="EventID" />
             <ScalarProperty Name="Title" ColumnName="Title" />
             <ScalarProperty Name="Description" ColumnName="Description" />
@@ -884,41 +884,41 @@
             <ScalarProperty Name="AddressID" ColumnName="AddressID" />
             <ScalarProperty Name="Creator" ColumnName="Creator" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="FinanceDonations"><EntityTypeMapping TypeName="bayhelperModel.FinanceDonation"><MappingFragment StoreEntitySet="FinanceDonations">
+          <EntitySetMapping Name="FinanceDonations"><EntityTypeMapping TypeName="BayHelperModel.FinanceDonation"><MappingFragment StoreEntitySet="FinanceDonations">
             <ScalarProperty Name="FinanceDonation1" ColumnName="FinanceDonation1" />
             <ScalarProperty Name="EventID" ColumnName="EventID" />
             <ScalarProperty Name="UserID" ColumnName="UserID" />
             <ScalarProperty Name="Amount" ColumnName="Amount" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Messages"><EntityTypeMapping TypeName="bayhelperModel.Message"><MappingFragment StoreEntitySet="Messages">
+          <EntitySetMapping Name="Messages"><EntityTypeMapping TypeName="BayHelperModel.Message"><MappingFragment StoreEntitySet="Messages">
             <ScalarProperty Name="MessageID" ColumnName="MessageID" />
             <ScalarProperty Name="Title" ColumnName="Title" />
             <ScalarProperty Name="Description" ColumnName="Description" />
             <ScalarProperty Name="Sender" ColumnName="Sender" />
             <ScalarProperty Name="Recepient" ColumnName="Recepient" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Organizations"><EntityTypeMapping TypeName="bayhelperModel.Organization"><MappingFragment StoreEntitySet="Organizations">
+          <EntitySetMapping Name="Organizations"><EntityTypeMapping TypeName="BayHelperModel.Organization"><MappingFragment StoreEntitySet="Organizations">
             <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
             <ScalarProperty Name="Name" ColumnName="Name" />
             <ScalarProperty Name="Description" ColumnName="Description" />
             <ScalarProperty Name="Rating" ColumnName="Rating" />
             <ScalarProperty Name="DateRegistered" ColumnName="DateRegistered" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="ResourceDonations"><EntityTypeMapping TypeName="bayhelperModel.ResourceDonation"><MappingFragment StoreEntitySet="ResourceDonations">
+          <EntitySetMapping Name="ResourceDonations"><EntityTypeMapping TypeName="BayHelperModel.ResourceDonation"><MappingFragment StoreEntitySet="ResourceDonations">
             <ScalarProperty Name="ResourceDonationID" ColumnName="ResourceDonationID" />
             <ScalarProperty Name="ResorceID" ColumnName="ResorceID" />
             <ScalarProperty Name="UserID" ColumnName="UserID" />
             <ScalarProperty Name="Amount" ColumnName="Amount" />
             <ScalarProperty Name="Location" ColumnName="Location" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Resources"><EntityTypeMapping TypeName="bayhelperModel.Resource"><MappingFragment StoreEntitySet="Resources">
+          <EntitySetMapping Name="Resources"><EntityTypeMapping TypeName="BayHelperModel.Resource"><MappingFragment StoreEntitySet="Resources">
             <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
             <ScalarProperty Name="Description" ColumnName="Description" />
             <ScalarProperty Name="Units" ColumnName="Units" />
             <ScalarProperty Name="AmountRequired" ColumnName="AmountRequired" />
             <ScalarProperty Name="EventID" ColumnName="EventID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Tasks"><EntityTypeMapping TypeName="bayhelperModel.Task"><MappingFragment StoreEntitySet="Tasks">
+          <EntitySetMapping Name="Tasks"><EntityTypeMapping TypeName="BayHelperModel.Task"><MappingFragment StoreEntitySet="Tasks">
             <ScalarProperty Name="TaskID" ColumnName="TaskID" />
             <ScalarProperty Name="Title" ColumnName="Title" />
             <ScalarProperty Name="Description" ColumnName="Description" />
@@ -926,7 +926,7 @@
             <ScalarProperty Name="FinanceEstimate" ColumnName="FinanceEstimate" />
             <ScalarProperty Name="EventID" ColumnName="EventID" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="TimeDonations"><EntityTypeMapping TypeName="bayhelperModel.TimeDonation"><MappingFragment StoreEntitySet="TimeDonations">
+          <EntitySetMapping Name="TimeDonations"><EntityTypeMapping TypeName="BayHelperModel.TimeDonation"><MappingFragment StoreEntitySet="TimeDonations">
             <ScalarProperty Name="TimeDonationID" ColumnName="TimeDonationID" />
             <ScalarProperty Name="TaskID" ColumnName="TaskID" />
             <ScalarProperty Name="UserID" ColumnName="UserID" />
@@ -934,7 +934,7 @@
             <ScalarProperty Name="Date" ColumnName="Date" />
             <ScalarProperty Name="Status" ColumnName="Status" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="bayhelperModel.User"><MappingFragment StoreEntitySet="Users">
+          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="BayHelperModel.User"><MappingFragment StoreEntitySet="Users">
             <ScalarProperty Name="UserID" ColumnName="UserID" />
             <ScalarProperty Name="LastName" ColumnName="LastName" />
             <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -968,22 +968,22 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="BayHelperModel">
-        <EntityTypeShape EntityType="bayhelperModel.Address" Width="1.5" PointX="0.75" PointY="9.125" Height="2.5571907552083317" IsExpanded="true" />
-        <EntityTypeShape EntityType="bayhelperModel.Comment" Width="1.5" PointX="11.25" PointY="9.125" Height="2.7494921874999996" IsExpanded="true" />
-        <EntityTypeShape EntityType="bayhelperModel.Event" Width="1.5" PointX="3" PointY="8.5" Height="3.9033007812499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="bayhelperModel.FinanceDonation" Width="1.5" PointX="8.25" PointY="6.375" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="bayhelperModel.Message" Width="1.5" PointX="8.25" PointY="9.25" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="bayhelperModel.Organization" Width="1.5" PointX="3.75" PointY="5.375" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="bayhelperModel.ResourceDonation" Width="1.5" PointX="8.25" PointY="13.125" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="bayhelperModel.Resource" Width="1.5" PointX="5.25" PointY="14" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="bayhelperModel.Task" Width="1.5" PointX="5.25" PointY="17.125" Height="2.5571907552083317" IsExpanded="true" />
-        <EntityTypeShape EntityType="bayhelperModel.TimeDonation" Width="1.5" PointX="11.25" PointY="12.625" Height="2.5571907552083353" IsExpanded="true" />
-        <EntityTypeShape EntityType="bayhelperModel.User" Width="1.5" PointX="6" PointY="8.125" Height="4.6725065104166674" IsExpanded="true" />
-        <AssociationConnector Association="bayhelperModel.FK_Event_Address" ManuallyRouted="false">
+        <EntityTypeShape EntityType="BayHelperModel.Address" Width="1.5" PointX="0.75" PointY="9.125" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="BayHelperModel.Comment" Width="1.5" PointX="11.25" PointY="9.125" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BayHelperModel.Event" Width="1.5" PointX="3" PointY="8.5" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BayHelperModel.FinanceDonation" Width="1.5" PointX="8.25" PointY="6.375" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BayHelperModel.Message" Width="1.5" PointX="8.25" PointY="9.25" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="BayHelperModel.Organization" Width="1.5" PointX="3.75" PointY="5.375" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BayHelperModel.ResourceDonation" Width="1.5" PointX="8.25" PointY="13.125" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="BayHelperModel.Resource" Width="1.5" PointX="5.25" PointY="14" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="BayHelperModel.Task" Width="1.5" PointX="5.25" PointY="17.125" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="BayHelperModel.TimeDonation" Width="1.5" PointX="11.25" PointY="12.625" Height="2.5571907552083353" IsExpanded="true" />
+        <EntityTypeShape EntityType="BayHelperModel.User" Width="1.5" PointX="6" PointY="8.125" Height="4.6725065104166674" IsExpanded="true" />
+        <AssociationConnector Association="BayHelperModel.FK_Event_Address" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="10.403595377604166" />
           <ConnectorPoint PointX="3" PointY="10.403595377604166" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_User_Address" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_User_Address" ManuallyRouted="false">
           <ConnectorPoint PointX="1.5" PointY="11.682190755208332" />
           <ConnectorPoint PointX="1.5" PointY="12.631653645833334" />
           <ConnectorPoint PointX="3.2604141666666666" PointY="12.631653645833334" />
@@ -994,7 +994,7 @@
           <ConnectorPoint PointX="4.2395858333333329" PointY="12.631653645833334" />
           <ConnectorPoint PointX="6" PointY="12.631653645833334" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_Comment_Event" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_Comment_Event" ManuallyRouted="false">
           <ConnectorPoint PointX="3.75" PointY="12.40330078125" />
           <ConnectorPoint PointX="3.75" PointY="13.047506510416667" />
           <ConnectorPoint PointX="4.0729191666666669" PointY="13.047506510416667" />
@@ -1009,65 +1009,65 @@
           <ConnectorPoint PointX="10.875" PointY="10.49974609375" />
           <ConnectorPoint PointX="11.25" PointY="10.49974609375" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_Comment_User" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_Comment_User" ManuallyRouted="false">
           <ConnectorPoint PointX="7.5" PointY="11.708639322916667" />
           <ConnectorPoint PointX="10.791666666666666" PointY="11.708639322916667" />
           <ConnectorPoint PointX="10.958333333333334" PointY="11.708639322916667" />
           <ConnectorPoint PointX="11.25" PointY="11.708639322916667" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_Event_User" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_Event_User" ManuallyRouted="false">
           <ConnectorPoint PointX="6" PointY="10.451650390625" />
           <ConnectorPoint PointX="4.5" PointY="10.451650390625" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_FinanceDonation_Event" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_FinanceDonation_Event" ManuallyRouted="false">
           <ConnectorPoint PointX="3.34375" PointY="8.5" />
           <ConnectorPoint PointX="3.34375" PointY="7.8362939453125" />
           <ConnectorPoint PointX="6.666666666666667" PointY="7.8362939453124989" />
           <ConnectorPoint PointX="6.833333333333333" PointY="7.8362939453125" />
           <ConnectorPoint PointX="8.25" PointY="7.8362939453125" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_Resource_Event" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_Resource_Event" ManuallyRouted="false">
           <ConnectorPoint PointX="4.1562525" PointY="12.40330078125" />
           <ConnectorPoint PointX="4.1562525" PointY="15.182444661458334" />
           <ConnectorPoint PointX="5.25" PointY="15.182444661458334" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_Task_Event" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_Task_Event" ManuallyRouted="false">
           <ConnectorPoint PointX="3.3437475" PointY="12.40330078125" />
           <ConnectorPoint PointX="3.3437475" PointY="18.403595377604166" />
           <ConnectorPoint PointX="5.25" PointY="18.403595377604166" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_FinanceDonation_User" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_FinanceDonation_User" ManuallyRouted="false">
           <ConnectorPoint PointX="7.5" PointY="8.3362939453125" />
           <ConnectorPoint PointX="8.25" PointY="8.3362939453125" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_Message_User" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_Message_User" ManuallyRouted="false">
           <ConnectorPoint PointX="7.5" PointY="10.432444661458334" />
           <ConnectorPoint PointX="8.25" PointY="10.432444661458334" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_Message_User1" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_Message_User1" ManuallyRouted="false">
           <ConnectorPoint PointX="7.5" PointY="9.7787223307291669" />
           <ConnectorPoint PointX="8.25" PointY="9.7787223307291669" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_User_Organization" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_User_Organization" ManuallyRouted="false">
           <ConnectorPoint PointX="5.25" PointY="6.4612939453125" />
           <ConnectorPoint PointX="6.75" PointY="6.4612939453125" />
           <ConnectorPoint PointX="6.75" PointY="8.125" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_ResourceDonation_Resource" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_ResourceDonation_Resource" ManuallyRouted="false">
           <ConnectorPoint PointX="6.75" PointY="14.744944661458334" />
           <ConnectorPoint PointX="8.25" PointY="14.744944661458334" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_ResourceDonation_User" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_ResourceDonation_User" ManuallyRouted="false">
           <ConnectorPoint PointX="7.15625" PointY="12.797506510416667" />
           <ConnectorPoint PointX="7.15625" PointY="13.53125" />
           <ConnectorPoint PointX="8.25" PointY="13.53125" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_TimeDonation_Task" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_TimeDonation_Task" ManuallyRouted="false">
           <ConnectorPoint PointX="6.75" PointY="18.403595377604166" />
           <ConnectorPoint PointX="12" PointY="18.403595377604166" />
           <ConnectorPoint PointX="12" PointY="15.182190755208335" />
         </AssociationConnector>
-        <AssociationConnector Association="bayhelperModel.FK_TimeDonation_User" ManuallyRouted="false">
+        <AssociationConnector Association="BayHelperModel.FK_TimeDonation_User" ManuallyRouted="false">
           <ConnectorPoint PointX="7.5" PointY="12.797506510416667" />
           <ConnectorPoint PointX="7.875" PointY="13.172506510416667" />
           <ConnectorPoint PointX="7.875" PointY="12.25" />
