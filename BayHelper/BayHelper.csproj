@@ -129,13 +129,10 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\WebProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\BayHelper.mdf" />
-    <Content Include="App_Data\BayHelper_log.ldf">
-      <DependentUpon>BayHelper.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\ajax-loader.gif" />
     <Content Include="Content\bh_logo.png" />
     <Content Include="Content\bk_body.jpg" />
@@ -236,7 +233,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -293,6 +292,9 @@
     <Content Include="Views\Event\Create.cshtml" />
     <Content Include="Views\Event\Edit.cshtml" />
     <Content Include="Views\Event\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

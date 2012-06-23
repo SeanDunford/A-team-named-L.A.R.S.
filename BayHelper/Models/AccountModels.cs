@@ -63,5 +63,37 @@ namespace BayHelper.Com.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        //Address
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "First Name")]
+        public String FirstName { get; set; }
+        
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Last Name")]
+        public String LastName { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Street 1")]
+        public String Street1 { get; set; }
+
+        [DataType(DataType.Text)]
+        [Display(Name = "Street 1")]
+        public String Street2 { get; set; }
+
+        [DataType(DataType.Text)]
+        [Display(Name = "City")]
+        public String City { get; set; }
+
+        [DataType(DataType.Text)]
+        [Display(Name = "State")]
+        public String State { get; set; }
+
+        [Display(Name = "Zip")]
+        [StringLength(10, ErrorMessage = "The Zip Code must be at most 10 characters long.")]
+        public String Zip { get; set; }
     }
 }
