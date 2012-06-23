@@ -80,6 +80,7 @@ page width. Or, you can specify an exact pixel width. */
     width: 940px;
     margin-left: auto;
     margin-right: auto;
+    height:auto;
 }
 
 header, #header {
@@ -113,7 +114,7 @@ header h1, #header h1 {
 */
 footer, 
 #footer {
-    /*background-color: #fff;*/
+    background-color:rgba(226, 226, 226, 0.27);
     color: #999;
     padding: 10px 0;
     text-align: center;
@@ -123,13 +124,19 @@ footer,
     border-radius: 0 0 4px 4px;
     -webkit-border-radius: 0 0 4px 4px;
     -moz-border-radius: 0 0 4px 4px;
-    border-top: 1px solid silver;
-    width:940px;
+    border-top: 1px solid #DFDFDF;
+    width:100%;
     margin-left: auto;
 	margin-right:auto;
 	text-align: left;
 }
 
+.footer-container
+{
+    margin-left:auto;
+    margin-right: auto; 
+    width: 940px;
+}
 /* TAB MENU   
 ----------------------------------------------------------*/
 /*ul#menu {
