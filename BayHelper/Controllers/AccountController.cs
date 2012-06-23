@@ -88,8 +88,8 @@ namespace BayHelper.Com.Controllers
                     {
                         Address = new Address
                         {
-                            StreetAddress = model.Street1,
-                            Apt = model.Street2,
+                            StreetAddress1 = model.Street1,
+                            StreetAddress2 = model.Street2,
                             City = model.City,
                             State = model.State,
                             Zip = model.Zip
