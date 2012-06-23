@@ -18,8 +18,8 @@ namespace BayHelper.Com.Controllers
 
         public ViewResult Index()
         {
-            var events = db.Events.Include(e => e.Address).Include(e => e.User);
-            return View(events.ToList());
+            var es = db.Events.Include(e => e.Address).Include(e => e.User);
+            return View(es.ToList());
         }
 
         //
@@ -27,8 +27,8 @@ namespace BayHelper.Com.Controllers
 
         public ViewResult Details(int id)
         {
-            Event event = db.Events.Find(id);
-            return View(event);
+            Event e = db.Events.Find(id);
+            return View(e);
         }
 
         //
@@ -45,18 +45,18 @@ namespace BayHelper.Com.Controllers
         // POST: /Event/Create
 
         [HttpPost]
-        public ActionResult Create(Event event)
+        public ActionResult Create(Event e)
         {
             if (ModelState.IsValid)
             {
-                db.Events.Add(event);
+                db.Events.Add(e);
                 db.SaveChanges();
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress", event.AddressID);
-            ViewBag.Creator = new SelectList(db.Users, "UserID", "LastName", event.Creator);
-            return View(event);
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress", e.AddressID);
+            ViewBag.Creator = new SelectList(db.Users, "UserID", "LastName", e.Creator);
+            return View(e);
         }
         
         //
@@ -64,27 +64,27 @@ namespace BayHelper.Com.Controllers
  
         public ActionResult Edit(int id)
         {
-            Event event = db.Events.Find(id);
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress", event.AddressID);
-            ViewBag.Creator = new SelectList(db.Users, "UserID", "LastName", event.Creator);
-            return View(event);
+            Event e = db.Events.Find(id);
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress", e.AddressID);
+            ViewBag.Creator = new SelectList(db.Users, "UserID", "LastName", e.Creator);
+            return View(e);
         }
 
         //
         // POST: /Event/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Event event)
+        public ActionResult Edit(Event e)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(event).State = EntityState.Modified;
+                db.Entry(e).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress", event.AddressID);
-            ViewBag.Creator = new SelectList(db.Users, "UserID", "LastName", event.Creator);
-            return View(event);
+            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress", e.AddressID);
+            ViewBag.Creator = new SelectList(db.Users, "UserID", "LastName", e.Creator);
+            return View(e);
         }
 
         //
@@ -92,8 +92,8 @@ namespace BayHelper.Com.Controllers
  
         public ActionResult Delete(int id)
         {
-            Event event = db.Events.Find(id);
-            return View(event);
+            Event e = db.Events.Find(id);
+            return View(e);
         }
 
         //
@@ -102,8 +102,8 @@ namespace BayHelper.Com.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            
-            Event event = db.Events.Find(id);
-            db.Events.Remove(event);
+            Event e = db.Events.Find(id);
+            db.Events.Remove(e);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
