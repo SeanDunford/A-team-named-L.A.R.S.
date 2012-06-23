@@ -17,8 +17,8 @@ namespace BayHelper.Com.Models
         public int MessageID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public Nullable<int> Writer { get; set; }
-        public Nullable<int> Reciever { get; set; }
+        public Nullable<int> Sender { get; set; }
+        public Nullable<int> Recepient { get; set; }
     
         public virtual User User { get; set; }
         public virtual User User1 { get; set; }

@@ -31,8 +31,8 @@ namespace BayHelper.Com.Models
         public DbSet<FinanceDonation> FinanceDonations { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Organization> Organizations { get; set; }
-        public DbSet<Resource> Resources { get; set; }
         public DbSet<ResourceDonation> ResourceDonations { get; set; }
+        public DbSet<Resource> Resources { get; set; }
         public DbSet<Task> Tasks { get; set; }
         public DbSet<TimeDonation> TimeDonations { get; set; }
         public DbSet<User> Users { get; set; }

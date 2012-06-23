@@ -36,8 +36,8 @@ namespace BayHelper.Com.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.Writer = new SelectList(db.Users, "UserID", "LastName");
-            ViewBag.Reciever = new SelectList(db.Users, "UserID", "LastName");
+            ViewBag.Sender = new SelectList(db.Users, "UserID", "LastName");
+            ViewBag.Recepient = new SelectList(db.Users, "UserID", "LastName");
             return View();
         } 
 
@@ -54,8 +54,8 @@ namespace BayHelper.Com.Controllers
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.Writer = new SelectList(db.Users, "UserID", "LastName", message.Writer);
-            ViewBag.Reciever = new SelectList(db.Users, "UserID", "LastName", message.Reciever);
+            ViewBag.Sender = new SelectList(db.Users, "UserID", "LastName", message.Sender);
+            ViewBag.Recepient = new SelectList(db.Users, "UserID", "LastName", message.Recepient);
             return View(message);
         }
         
@@ -65,8 +65,8 @@ namespace BayHelper.Com.Controllers
         public ActionResult Edit(int id)
         {
             Message message = db.Messages.Find(id);
-            ViewBag.Writer = new SelectList(db.Users, "UserID", "LastName", message.Writer);
-            ViewBag.Reciever = new SelectList(db.Users, "UserID", "LastName", message.Reciever);
+            ViewBag.Sender = new SelectList(db.Users, "UserID", "LastName", message.Sender);
+            ViewBag.Recepient = new SelectList(db.Users, "UserID", "LastName", message.Recepient);
             return View(message);
         }
 
@@ -82,8 +82,8 @@ namespace BayHelper.Com.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Writer = new SelectList(db.Users, "UserID", "LastName", message.Writer);
-            ViewBag.Reciever = new SelectList(db.Users, "UserID", "LastName", message.Reciever);
+            ViewBag.Sender = new SelectList(db.Users, "UserID", "LastName", message.Sender);
+            ViewBag.Recepient = new SelectList(db.Users, "UserID", "LastName", message.Recepient);
             return View(message);
         }
 
