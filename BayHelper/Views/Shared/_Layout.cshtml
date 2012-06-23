@@ -32,26 +32,14 @@
                     </a>@Html.ActionLink("bay helper", "Index", "Home", null, new { @class = "brand" })
                     <div class="nav-collapse">
                         <ul class="nav">
-                            <li class="active">@Html.ActionLink("about us", "About", "Home")</a></li>
-                            <li><a href="#">discover tampa bay</a></li>
+                            <li class="active">@Html.ActionLink("about us", "About", "Home")</li>
+                            <li>@Html.ActionLink("discover tampa bay", "DiscoverTampaBay", "Home")</li>
                         </ul>
                         <ul class="nav pull-right">
                             <form class="navbar-search pull-left">
                             <input type="text" class="search-query span2" placeholder="Search">
                             </form>
-                            <li>@Html.ActionLink("sign up!", "Register", "Account")</a></li>
-                            <li>@Html.ActionLink("login", "LogOn", "Account")</li>
-                            @* <li class="divider-vertical"></li>
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">login
-                                <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </li>*@
+                            @Html.Partial("_LogOnPartial")
                         </ul>
                     </div>
                 </div>

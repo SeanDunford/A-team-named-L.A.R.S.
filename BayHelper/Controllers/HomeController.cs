@@ -19,5 +19,10 @@ namespace BayHelper.Com.Controllers
         {
             return View();
         }
+
+        public ActionResult DiscoverTampaBay()
+        {
+            return View();
+        }
     }
 }
