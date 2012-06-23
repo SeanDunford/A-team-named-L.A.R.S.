@@ -3,14 +3,7 @@ The base color for this template is #5c87b2. If you'd like
 to use a different color start by replacing all instances of
 #5c87b2 with your new color.
 ----------------------------------------------------------*/
-body {
-    /*background-color: #5c87b2;*/
-    /*font-size: .85em;
-    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
-    margin: 0;
-    padding: 0;*/
-    /*color: #696969;*/
-}
+
 
 a:link {
     /*color: #034af3;*/
@@ -34,13 +27,13 @@ a:active {
     margin-bottom: 20px;
     line-height: 1.6em;
 }
-
+*/
 header,
 footer,
 nav,
 section {
     display: block;
-}*/
+}
 
 /* HEADINGS   
 ----------------------------------------------------------*/
@@ -80,7 +73,7 @@ page width. Or, you can specify an exact pixel width. */
     width: 940px;
     margin-left: auto;
     margin-right: auto;
-    height:auto;
+    height:100%;
 }
 
 header, #header {
@@ -92,43 +85,21 @@ header, #header {
     margin-left:auto;
     margin-right: auto;
 }
-/*
-header h1, #header h1 {
-    font-weight: bold;
-    padding: 5px 0;
-    margin: 0;
-    color: #fff;
-    border: none;
-    line-height: 2em;
-    font-size: 32px !important;
-    text-shadow: 1px 1px 2px #111;
-}
 
-#main {
-    padding: 30px 30px 15px 30px;
-    background-color: #fff;
-    border-radius: 4px 0 0 0;
-    -webkit-border-radius: 4px 0 0 0;
-    -moz-border-radius: 4px 0 0 0;
-}
-*/
 footer, 
 #footer {
     background-color:rgba(226, 226, 226, 0.27);
     color: #999;
     padding: 10px 0;
-    text-align: center;
     line-height: normal;
-    margin: 0 0 30px 0;
+    margin: 0;
     font-size: .9em;
-    border-radius: 0 0 4px 4px;
-    -webkit-border-radius: 0 0 4px 4px;
-    -moz-border-radius: 0 0 4px 4px;
     border-top: 1px solid #DFDFDF;
     width:100%;
     margin-left: auto;
 	margin-right:auto;
 	text-align: left;
+	margin-top: 20px;
 }
 
 .footer-container
@@ -136,6 +107,7 @@ footer,
     margin-left:auto;
     margin-right: auto; 
     width: 940px;
+    height:100%
 }
 /* TAB MENU   
 ----------------------------------------------------------*/
