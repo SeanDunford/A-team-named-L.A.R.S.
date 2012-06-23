@@ -173,7 +173,7 @@ a:hover {
 }
 
 .row {
-  margin-left: -20px;
+  /*margin-left: -20px;*/
   *zoom: 1;
 }
 
@@ -195,7 +195,7 @@ a:hover {
 .container,
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
-  width: 900px;
+  width: 940px;
 }
 
 .span12 {

@@ -171,6 +171,7 @@
     <Content Include="Content\img\glyphicons\glyphicons_214_resize_small.png" />
     <Content Include="Content\img\glyphicons\glyphicons_266_book_open.png" />
     <Content Include="Content\img\grid-18px-masked.png" />
+    <Content Include="Content\img\header.png" />
     <Content Include="Content\img\icon-css3.png" />
     <Content Include="Content\img\icon-github.png" />
     <Content Include="Content\img\icon-html5.png" />

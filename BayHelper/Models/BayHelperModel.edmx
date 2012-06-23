@@ -556,8 +556,8 @@
           <Property Name="MessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
           <Property Name="Description" Type="String" MaxLength="2500" Unicode="false" FixedLength="false" />
-          <Property Name="Writer" Type="Int32" />
-          <Property Name="Reciever" Type="Int32" />
+          <Property Name="Sender" Type="Int32" />
+          <Property Name="Recipient" Type="Int32" />
           <NavigationProperty Name="User" Relationship="BayHelperModel.FK_Message_User" FromRole="Message" ToRole="User" />
           <NavigationProperty Name="User1" Relationship="BayHelperModel.FK_Message_User1" FromRole="Message" ToRole="User" />
         </EntityType>
@@ -770,7 +770,7 @@
               <PropertyRef Name="UserID" />
             </Principal>
             <Dependent Role="Message">
-              <PropertyRef Name="Writer" />
+              <PropertyRef Name="Sender" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -782,7 +782,7 @@
               <PropertyRef Name="UserID" />
             </Principal>
             <Dependent Role="Message">
-              <PropertyRef Name="Reciever" />
+              <PropertyRef Name="Recipient" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -894,8 +894,8 @@
             <ScalarProperty Name="MessageID" ColumnName="MessageID" />
             <ScalarProperty Name="Title" ColumnName="Title" />
             <ScalarProperty Name="Description" ColumnName="Description" />
-            <ScalarProperty Name="Writer" ColumnName="Writer" />
-            <ScalarProperty Name="Reciever" ColumnName="Reciever" />
+            <ScalarProperty Name="Sender" ColumnName="Writer" />
+            <ScalarProperty Name="Recipient" ColumnName="Reciever" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="Organizations"><EntityTypeMapping TypeName="BayHelperModel.Organization"><MappingFragment StoreEntitySet="Organization">
             <ScalarProperty Name="OrganizationID" ColumnName="OrganizationID" />
@@ -967,7 +967,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="BayHelperModel" ZoomLevel="94">
+      <Diagram Name="BayHelperModel" ZoomLevel="73">
         <EntityTypeShape EntityType="BayHelperModel.Address" Width="1.5" PointX="0.75" PointY="9.125" Height="2.5571907552083317" IsExpanded="true" />
         <EntityTypeShape EntityType="BayHelperModel.Comment" Width="1.5" PointX="11.25" PointY="9.125" Height="2.7494921874999996" IsExpanded="true" />
         <EntityTypeShape EntityType="BayHelperModel.Event" Width="1.5" PointX="3" PointY="8.5" Height="3.9033007812499996" IsExpanded="true" />
