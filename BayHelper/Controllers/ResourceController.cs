@@ -15,7 +15,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Resource/
-
+          [Authorize]
         public ViewResult Index()
         {
             var resources = db.Resources.Include(r => r.Event);
@@ -24,7 +24,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Resource/Details/5
-
+          [Authorize]
         public ViewResult Details(int id)
         {
             Resource resource = db.Resources.Find(id);
@@ -33,7 +33,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Resource/Create
-
+          [Authorize]
         public ActionResult Create()
         {
             ViewBag.EventID = new SelectList(db.Events, "EventID", "Title");
@@ -42,7 +42,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Resource/Create
-
+          [Authorize]
         [HttpPost]
         public ActionResult Create(Resource resource)
         {
@@ -59,7 +59,7 @@ namespace BayHelper.Com.Controllers
         
         //
         // GET: /Resource/Edit/5
- 
+   [Authorize]
         public ActionResult Edit(int id)
         {
             Resource resource = db.Resources.Find(id);
@@ -69,7 +69,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Resource/Edit/5
-
+          [Authorize]
         [HttpPost]
         public ActionResult Edit(Resource resource)
         {
@@ -85,7 +85,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Resource/Delete/5
- 
+   [Authorize]
         public ActionResult Delete(int id)
         {
             Resource resource = db.Resources.Find(id);
@@ -94,7 +94,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Resource/Delete/5
-
+          [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            

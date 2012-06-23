@@ -53,7 +53,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Account/LogOff
-
+                [Authorize]
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
@@ -167,7 +167,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Account/ChangePasswordSuccess
-
+                [Authorize]
         public ActionResult ChangePasswordSuccess()
         {
             return View();

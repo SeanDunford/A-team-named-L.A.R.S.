@@ -15,7 +15,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /ResourceDonation/
-
+          [Authorize]
         public ViewResult Index()
         {
             var resourcedonations = db.ResourceDonations.Include(r => r.Resource).Include(r => r.User);
@@ -24,7 +24,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /ResourceDonation/Details/5
-
+          [Authorize]
         public ViewResult Details(int id)
         {
             ResourceDonation resourcedonation = db.ResourceDonations.Find(id);
@@ -33,7 +33,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /ResourceDonation/Create
-
+          [Authorize]
         public ActionResult Create()
         {
             ViewBag.ResorceID = new SelectList(db.Resources, "ResourceID", "Description");
@@ -43,7 +43,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /ResourceDonation/Create
-
+          [Authorize]
         [HttpPost]
         public ActionResult Create(ResourceDonation resourcedonation)
         {
@@ -61,7 +61,7 @@ namespace BayHelper.Com.Controllers
         
         //
         // GET: /ResourceDonation/Edit/5
- 
+   [Authorize]
         public ActionResult Edit(int id)
         {
             ResourceDonation resourcedonation = db.ResourceDonations.Find(id);
@@ -72,7 +72,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /ResourceDonation/Edit/5
-
+          [Authorize]
         [HttpPost]
         public ActionResult Edit(ResourceDonation resourcedonation)
         {
@@ -89,7 +89,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /ResourceDonation/Delete/5
- 
+   [Authorize]
         public ActionResult Delete(int id)
         {
             ResourceDonation resourcedonation = db.ResourceDonations.Find(id);
@@ -98,7 +98,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /ResourceDonation/Delete/5
-
+          [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            

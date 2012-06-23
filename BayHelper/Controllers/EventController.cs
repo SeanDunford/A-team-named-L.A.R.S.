@@ -15,7 +15,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Event/
-
+    [Authorize]
         public ViewResult Index()
         {
             var events = db.Events.Include(e => e.Address).Include(e => e.User);
@@ -24,7 +24,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Event/Details/5
-
+           [Authorize]
         public ViewResult Details(int id)
         {
             Event e = db.Events.Find(id);
@@ -33,7 +33,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Event/Create
-
+           [Authorize]
         public ActionResult Create()
         {
             ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress1");
@@ -47,7 +47,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Event/Create
-
+           [Authorize]
         [HttpPost]
         public ActionResult Create(Event e)
         {
@@ -65,7 +65,7 @@ namespace BayHelper.Com.Controllers
         
         //
         // GET: /Event/Edit/5
- 
+    [Authorize]
         public ActionResult Edit(int id)
         {
             Event e = db.Events.Find(id);
@@ -76,7 +76,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Event/Edit/5
-
+           [Authorize]
         [HttpPost]
         public ActionResult Edit(Event e)
         {
@@ -93,7 +93,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Event/Delete/5
- 
+    [Authorize]
         public ActionResult Delete(int id)
         {
             Event e = db.Events.Find(id);
@@ -102,7 +102,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Event/Delete/5
-
+           [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            
