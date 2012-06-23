@@ -129,6 +129,7 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\WebProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
