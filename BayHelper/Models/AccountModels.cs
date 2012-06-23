@@ -67,6 +67,16 @@ namespace BayHelper.Com.Models
         //Address
         [Required]
         [DataType(DataType.Text)]
+        [Display(Name = "First Name")]
+        public String FirstName { get; set; }
+        
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Last Name")]
+        public String LastName { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
         [Display(Name = "Street 1")]
         public String Street1 { get; set; }
 
@@ -83,6 +93,7 @@ namespace BayHelper.Com.Models
         public String State { get; set; }
 
         [Display(Name = "Zip")]
-        public int Zip { get; set; }
+        [StringLength(10, ErrorMessage = "The Zip Code must be at most 10 characters long.")]
+        public String Zip { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace BayHelper.Com.Controllers
 {
     public class AccountController : Controller
     {
-
+        BayHelperEntities db = new BayHelperEntities();
         //
         // GET: /Account/LogOn
 
@@ -83,6 +83,29 @@ namespace BayHelper.Com.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
+
+                    var user = new User
+                    {
+                        Address = new Address
+                        {
+                            StreetAddress = model.Street1,
+                            Apt = model.Street2,
+                            City = model.City,
+                            State = model.State,
+                            Zip = model.Zip
+                        },
+                        Email = model.Email,
+                        FirstName = model.FirstName,
+                        LastName = model.LastName,
+                        Nickname = model.UserName,
+                    };
+                    db.Users.Add(user);
+                    using (db)
+                    {
+                        db.SaveChanges();
+                    }
+                    var profile = WebProfile.GetProfile(model.UserName);
+                    profile.UserId = user.UserID;
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
                     return RedirectToAction("Index", "Home");
                 }
