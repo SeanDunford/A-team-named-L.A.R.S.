@@ -145,9 +145,6 @@
     <Content Include="Content\ico\apple-touch-icon-72-precomposed.png" />
     <Content Include="Content\ico\favicon.ico" />
     <Content Include="Content\img\bird.png" />
-    <Content Include="Content\img\bootstrap-mdo-sfmoma-01.jpg" />
-    <Content Include="Content\img\bootstrap-mdo-sfmoma-02.jpg" />
-    <Content Include="Content\img\bootstrap-mdo-sfmoma-03.jpg" />
     <Content Include="Content\img\browsers.png" />
     <Content Include="Content\img\example-sites\fleetio.png" />
     <Content Include="Content\img\example-sites\jshint.png" />
