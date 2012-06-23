@@ -5,10 +5,10 @@ to use a different color start by replacing all instances of
 ----------------------------------------------------------*/
 body {
     /*background-color: #5c87b2;*/
-    font-size: .85em;
+    /*font-size: .85em;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     margin: 0;
-    padding: 0;
+    padding: 0;*/
     /*color: #696969;*/
 }
 
@@ -30,7 +30,7 @@ a:active {
     /*color: #12eb87;*/
 }
 
-p, ul {
+/*p, ul {
     margin-bottom: 20px;
     line-height: 1.6em;
 }
@@ -40,11 +40,11 @@ footer,
 nav,
 section {
     display: block;
-}
+}*/
 
 /* HEADINGS   
 ----------------------------------------------------------*/
-h1, h2, h3, h4, h5, h6 {
+/*h1, h2, h3, h4, h5, h6 {
     font-size: 1.5em;
     color: #000;
 }
@@ -69,7 +69,7 @@ h4 {
 
 h5, h6 {
     font-size: 1em;
-}
+}*/
 
 /* PRIMARY LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
@@ -91,7 +91,7 @@ header, #header {
     margin-left:auto;
     margin-right: auto;
 }
-
+/*
 header h1, #header h1 {
     font-weight: bold;
     padding: 5px 0;
@@ -110,7 +110,7 @@ header h1, #header h1 {
     -webkit-border-radius: 4px 0 0 0;
     -moz-border-radius: 4px 0 0 0;
 }
-
+*/
 footer, 
 #footer {
     /*background-color: #fff;*/
@@ -132,7 +132,7 @@ footer,
 
 /* TAB MENU   
 ----------------------------------------------------------*/
-ul#menu {
+/*ul#menu {
     border-bottom: 1px #5C87B2 solid;
     padding: 0 0 2px;
     position: relative;
@@ -178,23 +178,23 @@ ul#menu li a:active {
 ul#menu li.selected a {
     background-color: #fff;
     color: #000;
-}
+}*/
 
 /* FORM LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
 
-fieldset {
+/*fieldset {
     border: 1px solid #ddd;
     padding: 0 1.4em 1.4em 1.4em;
     margin: 0 0 1.5em 0;
-}
+}*/
 
-legend {
+/*legend {
     font-size: 1.2em;
     font-weight: bold;
-}
+}*/
 
-textarea {
+/*textarea {
     min-height: 75px;
 }
 
@@ -238,10 +238,10 @@ table th {
     background-color: #e8eef4;
     border: solid 1px #e8eef4;
 }
-
+*/
 /* MISC  
 ----------------------------------------------------------*/
-.clear {
+/*.clear {
     clear: both;
 }
 
@@ -305,11 +305,11 @@ div#title {
 
 .validation-summary-valid {
     display: none;
-}
+}*/
 
 /* Styles for editor and display helpers
 ----------------------------------------------------------*/
-.display-label, 
+/*.display-label, 
 .editor-label {
     margin: 1em 0 0 0;
 }
@@ -330,3 +330,4 @@ div#title {
 .tri-state {
     width: 6em;
 }
+*/
