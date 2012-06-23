@@ -33,7 +33,7 @@ namespace BayHelper.Com.Models
             }
             set
             {
-                this.SetPropertyValue("ClientId", value);
+                this.SetPropertyValue("UserId", value);
             }
         }
 
