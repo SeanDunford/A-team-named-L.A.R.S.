@@ -14,6 +14,10 @@ namespace BayHelper.Com.Controllers
         BayHelperEntities db = new BayHelperEntities();
         //
         // GET: /Account/LogOn
+        public ActionResult Index()
+        {
+            return View();
+        }
 
         public ActionResult LogOn()
         {
@@ -98,12 +102,12 @@ namespace BayHelper.Com.Controllers
                         FirstName = model.FirstName,
                         LastName = model.LastName,
                         Nickname = model.UserName,
+                        DateRegistered = DateTime.Now,
+                        OrganizationUser = false,
+                        Rating = 0
                     };
                     db.Users.Add(user);
-                    using (db)
-                    {
-                        db.SaveChanges();
-                    }
+                    db.SaveChanges();
                     var profile = WebProfile.GetProfile(model.UserName);
                     profile.UserId = user.UserID;
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
@@ -171,6 +175,19 @@ namespace BayHelper.Com.Controllers
         public ActionResult ChangePasswordSuccess()
         {
             return View();
+        }
+
+        public ActionResult Edit(int UserId)
+        {
+            var account = db.Users.Find(UserId);
+            return View(account);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(User user)
+        {
+            var account = db.Users.Find();
+            return RedirectToAction("Index");
         }
 
         #region Status Codes
