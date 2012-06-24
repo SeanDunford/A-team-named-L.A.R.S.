@@ -4,5 +4,84 @@
     ViewBag.DiscoverActive = "active";
 }
 
-<h2>DiscoverTampaBay</h2>
-<p>http://www.tampabay360.com/Attractions</p>
+<h2>Discover Tampa Bay</h2>
+<p>By becoming an active member, you are participating in building a better community for years to come. We have set up a system geared towards facilitating involvement on a community level, and creating relationships that will last in a constructive manner. You are free to chose activities that interest you and donate your time and resoures to see the actualization of those projects. Thank you for participating and we hope you have pleasant experience working with the people in the greater Tampa Bay Area!</p>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google Earth API Sample</title>
+    <script src="http://www.google.com/jsapi?key=ABQIAAAAuPsJpk3MBtDpJ4G8cqBnjRRaGTYH6UMl8mADNa0YKuWNNa8VNxQCzVBXTx2DYyXGsTOxpWhvIG7Djw" type="text/javascript"></script>
+    <script type="text/javascript">
+        function addSampleButton(caption, clickHandler) {
+            var btn = document.createElement('input');
+            btn.type = 'button';
+            btn.value = caption;
+
+            if (btn.attachEvent)
+                btn.attachEvent('onclick', clickHandler);
+            else
+                btn.addEventListener('click', clickHandler, false);
+
+            // add the button to the Sample UI
+            document.getElementById('sample-ui').appendChild(btn);
+        }
+
+        function addSampleUIHtml(html) {
+            document.getElementById('sample-ui').innerHTML += html;
+        }
+    </script>
+    <script type="text/javascript">
+        var ge;
+
+        google.load("earth", "1");
+        google.load("maps", "2");
+
+        function init() {
+            google.earth.createInstance('map3d', initCallback, failureCallback);
+
+            addSampleUIHtml(
+        '<input id="location" type="text" value="Tampa, FL"/>'
+      );
+
+            addSampleButton('Fly Here!', buttonClick)
+        }
+
+        function initCallback(instance) {
+            ge = instance;
+            ge.getWindow().setVisibility(true);
+
+            // add a navigation control
+            ge.getNavigationControl().setVisibility(ge.VISIBILITY_AUTO);
+
+            // add some layers
+            ge.getLayerRoot().enableLayerById(ge.LAYER_BORDERS, true);
+            ge.getLayerRoot().enableLayerById(ge.LAYER_ROADS, true);
+
+            document.getElementById('installed-plugin-version').innerHTML =
+        ge.getPluginVersion().toString();
+        }
+
+        function failureCallback(errorCode) {
+        }
+
+        function buttonClick() {
+            var geocodeLocation = document.getElementById('location').value;
+
+            var geocoder = new google.maps.ClientGeocoder();
+            geocoder.getLatLng(geocodeLocation, function (point) {
+                if (point) {
+                    var lookAt = ge.createLookAt('');
+                    lookAt.set(point.y, point.x, 10, ge.ALTITUDE_RELATIVE_TO_GROUND,
+                     0, 60, 20000);
+                    ge.getView().setAbstractView(lookAt);
+                }
+            });
+        }
+    
+    </script>
+  </head>
+  <body onload="init()" style="font-family: arial, sans-serif; font-size: 13px; border: 0;">
+    <div id="sample-ui"></div>
+    <div id="map3d" style="width: 500px; height: 380px;"></div>
+    <br>
+    <div>Installed Plugin Version: <span id="installed-plugin-version" style="font-weight: bold;">Loading...</span></div>
+  </body>
