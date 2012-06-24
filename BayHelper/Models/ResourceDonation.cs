@@ -15,12 +15,12 @@ namespace BayHelper.Com.Models
     public partial class ResourceDonation
     {
         public int ResourceDonationID { get; set; }
-        public Nullable<int> ResorceID { get; set; }
+        public Nullable<int> EventID { get; set; }
         public Nullable<int> UserID { get; set; }
         public Nullable<int> Amount { get; set; }
-        public Nullable<int> Location { get; set; }
+        public string Description { get; set; }
     
-        public virtual Resource Resource { get; set; }
+        public virtual Event Event { get; set; }
         public virtual User User { get; set; }
     }
     

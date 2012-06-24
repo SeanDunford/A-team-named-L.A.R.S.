@@ -14,6 +14,12 @@ namespace BayHelper.Com.Controllers
         BayHelperEntities db = new BayHelperEntities();
         //
         // GET: /Account/LogOn
+        [Authorize]
+        public ActionResult Index()
+        {
+            var user = db.Users.Find(WebProfile.Current.UserId);
+            return View(user);
+        }
 
         public ActionResult LogOn()
         {
@@ -22,7 +28,6 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Account/LogOn
-
         [HttpPost]
         public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
@@ -53,7 +58,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Account/LogOff
-
+                [Authorize]
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
@@ -83,7 +88,6 @@ namespace BayHelper.Com.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-
                     var user = new User
                     {
                         Address = new Address
@@ -98,14 +102,15 @@ namespace BayHelper.Com.Controllers
                         FirstName = model.FirstName,
                         LastName = model.LastName,
                         Nickname = model.UserName,
+                        DateRegistered = DateTime.Now,
+                        OrganizationUser = false,
+                        Rating = 0
                     };
                     db.Users.Add(user);
-                    using (db)
-                    {
-                        db.SaveChanges();
-                    }
+                    db.SaveChanges();
                     var profile = WebProfile.GetProfile(model.UserName);
                     profile.UserId = user.UserID;
+                    profile.Save();
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
                     return RedirectToAction("Index", "Home");
                 }
@@ -167,10 +172,23 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Account/ChangePasswordSuccess
-
+                [Authorize]
         public ActionResult ChangePasswordSuccess()
         {
             return View();
+        }
+
+        public ActionResult Edit(int? UserId)
+        {
+            var account = db.Users.Find(UserId??);
+            return View(account);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(User user)
+        {
+            var account = db.Users.Find();
+            return RedirectToAction("Index");
         }
 
         #region Status Codes

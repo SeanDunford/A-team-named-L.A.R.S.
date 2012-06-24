@@ -15,16 +15,16 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /TimeDonation/
-
+          [Authorize]
         public ViewResult Index()
         {
-            var timedonations = db.TimeDonations.Include(t => t.Task).Include(t => t.User);
+            var timedonations = db.TimeDonations.Include(t => t.Event).Include(t => t.User);
             return View(timedonations.ToList());
         }
 
         //
         // GET: /TimeDonation/Details/5
-
+          [Authorize]
         public ViewResult Details(int id)
         {
             TimeDonation timedonation = db.TimeDonations.Find(id);
@@ -33,17 +33,17 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /TimeDonation/Create
-
+          [Authorize]
         public ActionResult Create()
         {
-            ViewBag.TaskID = new SelectList(db.Tasks, "TaskID", "Title");
+            ViewBag.EventID = new SelectList(db.Events, "EventID", "Title");
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName");
             return View();
         } 
 
         //
         // POST: /TimeDonation/Create
-
+          [Authorize]
         [HttpPost]
         public ActionResult Create(TimeDonation timedonation)
         {
@@ -54,25 +54,25 @@ namespace BayHelper.Com.Controllers
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.TaskID = new SelectList(db.Tasks, "TaskID", "Title", timedonation.TaskID);
+            ViewBag.EventID = new SelectList(db.Events, "EventID", "Title", timedonation.EventID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName", timedonation.UserID);
             return View(timedonation);
         }
         
         //
         // GET: /TimeDonation/Edit/5
- 
+   [Authorize]
         public ActionResult Edit(int id)
         {
             TimeDonation timedonation = db.TimeDonations.Find(id);
-            ViewBag.TaskID = new SelectList(db.Tasks, "TaskID", "Title", timedonation.TaskID);
+            ViewBag.EventID = new SelectList(db.Events, "EventID", "Title", timedonation.EventID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName", timedonation.UserID);
             return View(timedonation);
         }
 
         //
         // POST: /TimeDonation/Edit/5
-
+          [Authorize]
         [HttpPost]
         public ActionResult Edit(TimeDonation timedonation)
         {
@@ -82,14 +82,14 @@ namespace BayHelper.Com.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.TaskID = new SelectList(db.Tasks, "TaskID", "Title", timedonation.TaskID);
+            ViewBag.EventID = new SelectList(db.Events, "EventID", "Title", timedonation.EventID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName", timedonation.UserID);
             return View(timedonation);
         }
 
         //
         // GET: /TimeDonation/Delete/5
- 
+   [Authorize]
         public ActionResult Delete(int id)
         {
             TimeDonation timedonation = db.TimeDonations.Find(id);
@@ -98,7 +98,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /TimeDonation/Delete/5
-
+          [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            

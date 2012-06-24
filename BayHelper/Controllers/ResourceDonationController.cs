@@ -15,16 +15,16 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /ResourceDonation/
-
+          [Authorize]
         public ViewResult Index()
         {
-            var resourcedonations = db.ResourceDonations.Include(r => r.Resource).Include(r => r.User);
+            var resourcedonations = db.ResourceDonations.Include(r => r.Event).Include(r => r.User);
             return View(resourcedonations.ToList());
         }
 
         //
         // GET: /ResourceDonation/Details/5
-
+          [Authorize]
         public ViewResult Details(int id)
         {
             ResourceDonation resourcedonation = db.ResourceDonations.Find(id);
@@ -33,17 +33,17 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /ResourceDonation/Create
-
+          [Authorize]
         public ActionResult Create()
         {
-            ViewBag.ResorceID = new SelectList(db.Resources, "ResourceID", "Description");
+            ViewBag.EventID = new SelectList(db.Events, "EventID", "Title");
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName");
             return View();
         } 
 
         //
         // POST: /ResourceDonation/Create
-
+          [Authorize]
         [HttpPost]
         public ActionResult Create(ResourceDonation resourcedonation)
         {
@@ -54,25 +54,25 @@ namespace BayHelper.Com.Controllers
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.ResorceID = new SelectList(db.Resources, "ResourceID", "Description", resourcedonation.ResorceID);
+            ViewBag.EventID = new SelectList(db.Events, "EventID", "Title", resourcedonation.EventID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName", resourcedonation.UserID);
             return View(resourcedonation);
         }
         
         //
         // GET: /ResourceDonation/Edit/5
- 
+   [Authorize]
         public ActionResult Edit(int id)
         {
             ResourceDonation resourcedonation = db.ResourceDonations.Find(id);
-            ViewBag.ResorceID = new SelectList(db.Resources, "ResourceID", "Description", resourcedonation.ResorceID);
+            ViewBag.EventID = new SelectList(db.Events, "EventID", "Title", resourcedonation.EventID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName", resourcedonation.UserID);
             return View(resourcedonation);
         }
 
         //
         // POST: /ResourceDonation/Edit/5
-
+          [Authorize]
         [HttpPost]
         public ActionResult Edit(ResourceDonation resourcedonation)
         {
@@ -82,14 +82,14 @@ namespace BayHelper.Com.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ResorceID = new SelectList(db.Resources, "ResourceID", "Description", resourcedonation.ResorceID);
+            ViewBag.EventID = new SelectList(db.Events, "EventID", "Title", resourcedonation.EventID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName", resourcedonation.UserID);
             return View(resourcedonation);
         }
 
         //
         // GET: /ResourceDonation/Delete/5
- 
+   [Authorize]
         public ActionResult Delete(int id)
         {
             ResourceDonation resourcedonation = db.ResourceDonations.Find(id);
@@ -98,7 +98,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /ResourceDonation/Delete/5
-
+          [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            
