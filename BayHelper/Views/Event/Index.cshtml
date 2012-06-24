@@ -12,6 +12,8 @@
     <h2>
         List Of All Events</h2>
 </center>
+@if (Model.Count() > 0)
+{ 
     <table style="margin: auto;">
         <tr>
             <th>
@@ -77,5 +79,10 @@
             </tr>
         }
     </table>
+}
+else
+{ 
+    <p><center>No events available at this time.</center></p>
+}
 </div>
 </div>

@@ -76,12 +76,21 @@
             <h3>
                 Latest</h3>
             <ul>
-                @foreach (var e in (List<BayHelper.Com.Models.Event>)ViewBag.Latest) { 
+                @if (((List<BayHelper.Com.Models.Event>)ViewBag.Latest).Count() == 0)
+                {
+                    <li>No Events available</li>
+                }
+                else
+                {
+                    foreach (var e in (List<BayHelper.Com.Models.Event>)ViewBag.Latest)
+                    { 
                     <li>@Html.ActionLink(e.Title, "Details", "Event", e.EventID)
-                        @if(e.Address!=null){
-                            <text>at @e.Address.City, 
+                        @if (e.Address != null)
+                        {
+                            <text>at @e.Address.City,
                             @e.Address.State</text>
                         }</li>
+                    }
                 }
             </ul>
         </span>
@@ -91,14 +100,22 @@
             <h3>
                 Popular</h3>
             <ul>
-                @foreach (var e in (List<BayHelper.Com.Models.Event>)ViewBag.Popular)
-                { 
+                @if (((List<BayHelper.Com.Models.Event>)ViewBag.Latest).Count() == 0)
+                {
+                    <li>No Events available</li>
+                }
+                else
+                {
+                    foreach (var e in (List<BayHelper.Com.Models.Event>)ViewBag.Popular)
+                    { 
                     <li>@Html.ActionLink(e.Title, "Details", "Event", e.EventID)
-                    @if(e.Address!=null){
-                            <text>at @e.Address.City, 
+                        @if (e.Address != null)
+                        {
+                            <text>at @e.Address.City,
                             @e.Address.State</text>
                         }
                     </li>
+                    }
                 }
             </ul>
         </span>

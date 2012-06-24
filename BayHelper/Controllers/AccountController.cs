@@ -191,10 +191,11 @@ namespace BayHelper.Com.Controllers
              if (ModelState.IsValid)
             {
                 db.Entry(user).State = EntityState.Modified;
+                db.Entry(user.Address).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return RedirectToAction("Index");
+             return View();
         }
 
         #region Status Codes
