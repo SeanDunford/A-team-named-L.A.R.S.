@@ -284,6 +284,8 @@
     <Content Include="Views\TimeDonation\Create.cshtml" />
     <Content Include="Views\TimeDonation\Edit.cshtml" />
     <Content Include="Views\TimeDonation\Delete.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

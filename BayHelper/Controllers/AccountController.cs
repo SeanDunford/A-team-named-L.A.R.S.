@@ -178,9 +178,9 @@ namespace BayHelper.Com.Controllers
             return View();
         }
 
-        public ActionResult Edit(int UserId)
+        public ActionResult Edit(int? UserId)
         {
-            var account = db.Users.Find(UserId);
+            var account = db.Users.Find(UserId??);
             return View(account);
         }
 
