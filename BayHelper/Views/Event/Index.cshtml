@@ -1,17 +1,18 @@
 ﻿@model IEnumerable<BayHelper.Com.Models.Event>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Events";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="row">
 <div class="span3">
 @Html.Partial("_LoggedInEvents")
 </div>
-<div class="span8 well">
+<div class="@if(User.Identity.IsAuthenticated){<text>span8</text>} well">
 <center>
     <h2>
-        List Of All Events</h2>
+         All Events</h2>
 </center>
+<br />
 @if (Model.Count() > 0)
 { 
     <table style="margin: auto;">
@@ -48,7 +49,11 @@
                     <img src="../../Content/img/icons/verified.png" alt="" />
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Title)
+                   @Html.ActionLink(item.Title, "Details", new
+              {
+                  id =
+                      item.EventID
+              })
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DueDate)

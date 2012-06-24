@@ -48,7 +48,11 @@
                     <img src="../../Content/img/icons/verified.png" alt="" />
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Title)
+                         @Html.ActionLink(item.Title, "Details", new
+                    {
+                        id =
+                            item.EventID
+                    })
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DueDate)
