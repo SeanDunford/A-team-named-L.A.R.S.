@@ -3,6 +3,7 @@
     ViewBag.Title = "Register";
 }
 <div style="text-align: center;">
+
     <h2>
         Create a New Account</h2>
     <p>
@@ -17,7 +18,7 @@
     @using (Html.BeginForm())
     {
         @Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.")
-        <div>
+        <div class="well" style="margin: 0px auto; text-align: left; width: 450px;">
             <fieldset>
                 <table style="margin: auto;">
                     <tr>
@@ -187,7 +188,9 @@
                         <td>
                         </td>
                         <td>
+                       <div style="text-align: right; ">
                             <input type="submit" value="Register" />
+                        </div>
                         </td>
                     </tr>
                 </table>
