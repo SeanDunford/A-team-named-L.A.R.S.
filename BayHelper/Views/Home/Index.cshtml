@@ -63,20 +63,46 @@
 </div>
 <div class="row">
     <div class="span4">
-        <span><h3>Latest Events</h3></span>
+        <span>
+            <h3>
+                Latest</h3>
+            <ul>
+                @foreach (var e in (List<BayHelper.Com.Models.Event>)ViewBag.Latest) { 
+                    <li>@Html.ActionLink(e.Title, "Details", "Event", e.EventID)
+                        @if(e.Address!=null){
+                            <text>at @e.Address.City, 
+                            @e.Address.State</text>
+                        }</li>
+                }
+            </ul>
+        </span>
     </div>
     <div class="span4">
-        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut odio mi, vitae
-            vestibulum neque. Donec interdum leo ac est scelerisque sed varius turpis commodo.
-            Phasellus ut nibh lectus. Quisque non augue non eros egestas varius. Nulla facilisi.
-            Proin blandit commodo nibh a pellentesque. Proin tincidunt nibh nec ligula rhoncus
-            consectetur. Cras et erat eros, vel pellentesque enim.</span>
+        <span>
+            <h3>
+                Popular</h3>
+            <ul>
+                @foreach (var e in (List<BayHelper.Com.Models.Event>)ViewBag.Popular)
+                { 
+                    <li>@Html.ActionLink(e.Title, "Details", "Event", e.EventID)
+                    @if(e.Address!=null){
+                            <text>at @e.Address.City, 
+                            @e.Address.State</text>
+                        }
+                    </li>
+                }
+            </ul>
+        </span>
     </div>
     <div class="span4">
-        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut odio mi, vitae
-            vestibulum neque. Donec interdum leo ac est scelerisque sed varius turpis commodo.
-            Phasellus ut nibh lectus. Quisque non augue non eros egestas varius. Nulla facilisi.
-            Proin blandit commodo nibh a pellentesque. Proin tincidunt nibh nec ligula rhoncus
-            consectetur. Cras et erat eros, vel pellentesque enim.</span>
+        <span>
+            <h3>
+                Trending</h3>
+            <ul>
+                @*@foreach (var e in (List<BayHelper.Com.Models.Event>)ViewBag.Latest) { 
+           <li> @Html.ActionLink(e.Title, "Details", "Event", e.EventID)</li>
+        }*@
+            </ul>
+        </span>
     </div>
 </div>
