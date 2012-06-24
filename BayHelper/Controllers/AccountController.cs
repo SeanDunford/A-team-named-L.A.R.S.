@@ -103,6 +103,7 @@ namespace BayHelper.Com.Controllers
                         FirstName = model.FirstName,
                         LastName = model.LastName,
                         Nickname = model.UserName,
+                        Phone = model.Phone,
                         DateRegistered = DateTime.Now,
                         OrganizationUser = false,
                         Rating = 0
