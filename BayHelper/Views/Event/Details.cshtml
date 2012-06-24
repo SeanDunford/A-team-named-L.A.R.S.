@@ -5,55 +5,55 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="well">
-<h2>Details</h2>
-
 <fieldset>
-    <legend>Event</legend>
 
-    <div class="display-label">Title</div>
-    <div class="display-field">
+    <br /><br />
+    <h1><div class="display-field">
         @Html.DisplayFor(model => model.Title)
     </div>
-
-    <div class="display-label">Description</div>
+        <h3>Event Details:</h3>
+    <br />
+    <h4><div class="display-label">Description:</div></h4>
     <div class="display-field">
         @Html.DisplayFor(model => model.Description)
     </div>
-
-    <div class="display-label">DateStarted</div>
+        <br />
+    <h4><div class="display-label">DateStarted:</div></h4>
     <div class="display-field">
         @Html.DisplayFor(model => model.DateStarted)
     </div>
-
-    <div class="display-label">DueDate</div>
+        <br />
+    <h4><div class="display-label">DueDate:</div></h4>
     <div class="display-field">
         @Html.DisplayFor(model => model.DueDate)
     </div>
-
-    <div class="display-label">Status</div>
+        <br />
+    <h4><div class="display-label">Status:</div></h4>
     <div class="display-field">
         @Html.DisplayFor(model => model.Status)
     </div>
-
-    <div class="display-label">FinanceGoal</div>
+        <br />
+    <h4><div class="display-label">Finance Goal:</div></h4>
     <div class="display-field">
         @Html.DisplayFor(model => model.FinanceGoal)
     </div>
-
-    <div class="display-label">Address</div>
+        <br />
+    <h4><div class="display-label">Address:</div></h4>
     <div class="display-field">
         @Html.DisplayFor(model => model.Address.StreetAddress1)
     </div>
-
-    <div class="display-label">User</div>
+        <br />
+    <h4><div class="display-label">User:</div></h4>
     <div class="display-field">
         @Html.DisplayFor(model => model.User.LastName)
-    </div>f
+    </div>
+    <br />
 </fieldset>
-<p>
-   @if (Model.Creator == BayHelper.Com.Models.WebProfile.Current.UserId) { 
-    @Html.ActionLink("Edit", "Edit", new { id=Model.EventID }, new { @class="btn"}) <text>|</text>
-                                                               }
+<p style="text-align:right;">
+   @if (Model.Creator == BayHelper.Com.Models.WebProfile.Current.UserId)
+   { 
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EventID }, new { @class = "btn" }) <text>|</text>
+   }
     @Html.ActionLink("Back to List", "Index", null, new { @class="btn"})
 </p>
 </div>
