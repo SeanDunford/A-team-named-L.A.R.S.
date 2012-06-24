@@ -1,8 +1,10 @@
 ﻿@if (Request.IsAuthenticated)
 {
-    <ul>
-        <li>@Html.ActionLink("Create An Event", "Create")</li>
-        <li>@Html.ActionLink("My Events", "MyEvents")</li>
-        <li>@Html.ActionLink("Attending Events", "Attending")</li>
-    </ul>
+    <div class="well">
+        <ul>
+            <li>@Html.ActionLink("Create An Event", "Create")</li>
+            <li>@Html.ActionLink("My Events", "MyEvents")</li>
+            <li>@Html.ActionLink("Attending Events", "Attending")</li>
+        </ul>
+    </div>
 }
