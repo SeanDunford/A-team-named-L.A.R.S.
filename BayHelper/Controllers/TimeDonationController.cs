@@ -34,8 +34,13 @@ namespace BayHelper.Com.Controllers
         //
         // GET: /TimeDonation/Create
           [Authorize]
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
+            var d = new TimeDonation()
+                {
+                    EventID = id,
+                    UserID = WebProfile.Current.UserId
+                };
             ViewBag.EventID = new SelectList(db.Events, "EventID", "Title");
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName");
             return View();
@@ -56,7 +61,7 @@ namespace BayHelper.Com.Controllers
 
             ViewBag.EventID = new SelectList(db.Events, "EventID", "Title", timedonation.EventID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName", timedonation.UserID);
-            return View(timedonation);
+            return RedirectToAction("Index", "Events", null);
         }
         
         //
