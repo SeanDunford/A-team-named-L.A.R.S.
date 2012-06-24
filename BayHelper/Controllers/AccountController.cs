@@ -110,6 +110,7 @@ namespace BayHelper.Com.Controllers
                     db.SaveChanges();
                     var profile = WebProfile.GetProfile(model.UserName);
                     profile.UserId = user.UserID;
+                    profile.Save();
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
                     return RedirectToAction("Index", "Home");
                 }
