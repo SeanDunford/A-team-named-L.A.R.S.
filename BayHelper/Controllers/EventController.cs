@@ -24,7 +24,6 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Event/Details/5
-        [Authorize]
         public ViewResult Details(int id)
         {
             Event e = db.Events.Find(id);

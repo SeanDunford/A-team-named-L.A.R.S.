@@ -4,7 +4,7 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<div class="well">
 <h2>Details</h2>
 
 <fieldset>
@@ -51,6 +51,9 @@
     </div>f
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.EventID }) |
-    @Html.ActionLink("Back to List", "Index")
+   @if (Model.Creator == BayHelper.Com.Models.WebProfile.Current.UserId) { 
+    @Html.ActionLink("Edit", "Edit", new { id=Model.EventID }, new { @class="btn"}) <text>|</text>
+                                                               }
+    @Html.ActionLink("Back to List", "Index", null, new { @class="btn"})
 </p>
+</div>
