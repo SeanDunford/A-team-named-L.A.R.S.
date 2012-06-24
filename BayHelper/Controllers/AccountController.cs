@@ -17,7 +17,7 @@ namespace BayHelper.Com.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var user = db.Users.Find(WebProfile.GetProfile(User.Identity.Name).UserId);
+            var user = db.Users.Find(WebProfile.Current.UserId);
             return View(user);
         }
 
@@ -178,9 +178,9 @@ namespace BayHelper.Com.Controllers
             return View();
         }
 
-        public ActionResult Edit(int UserId)
+        public ActionResult Edit(int? UserId)
         {
-            var account = db.Users.Find(UserId);
+            var account = db.Users.Find(UserId??);
             return View(account);
         }
 
