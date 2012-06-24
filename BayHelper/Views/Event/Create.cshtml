@@ -3,7 +3,7 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div style = "text-align:center;">
+<div class="well">
     <h2>
         Create An Event</h2>
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
@@ -75,6 +75,26 @@
             <tr>
                 <td>
                     <h4>
+                        Labor Needs (Amount in Hours):</h4>
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.LaborDescription)
+                    @Html.ValidationMessageFor(model => model.LaborDescription)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        Materials Needs:</h4>
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.ResourcesDescription)
+                    @Html.ValidationMessageFor(model => model.ResourcesDescription)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
                         Street Address 1:</h4>
                 </td>
                 <td>
@@ -124,8 +144,10 @@
             </tr>
             <tr>
                 <td colspan="2">
-                        <div>
-                            <input class="btn btn-primary" type="submit" value="Create" />
+                    <hr />
+                        <div style="text-align:left">
+                            <input class="btn btn-primary" type="submit" value="Create" style="width:100%" />
+                            </div>
                 </td>
                 <td>
                 </td>
