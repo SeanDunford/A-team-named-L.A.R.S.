@@ -134,7 +134,10 @@
     <Content Include="Content\ico\apple-touch-icon-57-precomposed.png" />
     <Content Include="Content\ico\apple-touch-icon-72-precomposed.png" />
     <Content Include="Content\ico\favicon.ico" />
+    <Content Include="Content\img\alex_about.jpg" />
+    <Content Include="Content\img\allen_about.jpg" />
     <Content Include="Content\img\bird.png" />
+    <Content Include="Content\img\bobby_about.jpg" />
     <Content Include="Content\img\browsers.png" />
     <Content Include="Content\img\example-sites\fleetio.png" />
     <Content Include="Content\img\example-sites\jshint.png" />
@@ -162,7 +165,9 @@
     <Content Include="Content\img\icon-twitter.png" />
     <Content Include="Content\img\less-logo-large.png" />
     <Content Include="Content\img\less-small.png" />
+    <Content Include="Content\img\luis_about.jpg" />
     <Content Include="Content\img\responsive-illustrations.png" />
+    <Content Include="Content\img\sean_about.jpg" />
     <Content Include="Content\js\application.js" />
     <Content Include="Content\js\bootstrap-alert.js" />
     <Content Include="Content\js\bootstrap-button.js" />
