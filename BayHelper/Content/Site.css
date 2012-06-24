@@ -107,9 +107,8 @@ footer,
 	margin-right:auto;
 	text-align: left;
 	margin-top: 20px;
-   position:fixed;
    bottom:0;
-   height:80px;
+   height:40px;
 }
 
 .footer-container

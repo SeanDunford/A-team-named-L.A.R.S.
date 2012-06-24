@@ -32,9 +32,9 @@
                     </a>@Html.ActionLink("BayHelper", "Index", "Home", null, new { @class = "brand" })
                     <div class="nav-collapse">
                         <ul class="nav">
-                            <li class="@ViewBag.AboutActive">@Html.ActionLink("About Us", "About", "Home")</li>
-                            <li class="@ViewBag.DiscoverActive">@Html.ActionLink("Discover Tampa Bay", "DiscoverTampaBay", "Home")</li>
                             <li class="@ViewBag.EventsActive">@Html.ActionLink("Events", "Index", "Event")</li>
+                            <li class="@ViewBag.DiscoverActive">@Html.ActionLink("Discover Tampa Bay", "DiscoverTampaBay", "Home")</li>
+                            <li class="@ViewBag.AboutActive">@Html.ActionLink("About Us", "About", "Home")</li>
                         </ul>
                         <ul class="nav pull-right">
                             <form class="navbar-search pull-left">
@@ -50,10 +50,11 @@
     <div class="container body-container">
         @RenderBody()
     </div>
+    <!--
     <footer>
         <div class="footer-container">
             Team L.A.R.S. City of Tampa Hackathon 2012 &copy;
         </div>
-    </footer>
+    </footer> -->
 </body>
 </html>
