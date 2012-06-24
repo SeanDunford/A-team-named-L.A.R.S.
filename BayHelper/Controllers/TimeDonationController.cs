@@ -15,7 +15,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /TimeDonation/
-
+          [Authorize]
         public ViewResult Index()
         {
             var timedonations = db.TimeDonations.Include(t => t.Event).Include(t => t.User);
@@ -24,7 +24,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /TimeDonation/Details/5
-
+          [Authorize]
         public ViewResult Details(int id)
         {
             TimeDonation timedonation = db.TimeDonations.Find(id);
@@ -33,7 +33,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /TimeDonation/Create
-
+          [Authorize]
         public ActionResult Create()
         {
             ViewBag.EventID = new SelectList(db.Events, "EventID", "Title");
@@ -43,7 +43,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /TimeDonation/Create
-
+          [Authorize]
         [HttpPost]
         public ActionResult Create(TimeDonation timedonation)
         {
@@ -61,7 +61,7 @@ namespace BayHelper.Com.Controllers
         
         //
         // GET: /TimeDonation/Edit/5
- 
+   [Authorize]
         public ActionResult Edit(int id)
         {
             TimeDonation timedonation = db.TimeDonations.Find(id);
@@ -72,7 +72,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /TimeDonation/Edit/5
-
+          [Authorize]
         [HttpPost]
         public ActionResult Edit(TimeDonation timedonation)
         {
@@ -89,7 +89,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /TimeDonation/Delete/5
- 
+   [Authorize]
         public ActionResult Delete(int id)
         {
             TimeDonation timedonation = db.TimeDonations.Find(id);
@@ -98,7 +98,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /TimeDonation/Delete/5
-
+          [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            

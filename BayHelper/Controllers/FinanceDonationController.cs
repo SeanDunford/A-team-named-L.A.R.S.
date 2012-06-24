@@ -15,7 +15,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /FinanceDonation/
-
+                [Authorize]
         public ViewResult Index()
         {
             var financedonations = db.FinanceDonations.Include(f => f.Event).Include(f => f.User);
@@ -24,7 +24,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /FinanceDonation/Details/5
-
+                [Authorize]
         public ViewResult Details(int id)
         {
             FinanceDonation financedonation = db.FinanceDonations.Find(id);
@@ -33,7 +33,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /FinanceDonation/Create
-
+                [Authorize]
         public ActionResult Create()
         {
             ViewBag.EventID = new SelectList(db.Events, "EventID", "Title");
@@ -43,7 +43,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /FinanceDonation/Create
-
+                [Authorize]
         [HttpPost]
         public ActionResult Create(FinanceDonation financedonation)
         {
@@ -61,7 +61,7 @@ namespace BayHelper.Com.Controllers
         
         //
         // GET: /FinanceDonation/Edit/5
- 
+         [Authorize]
         public ActionResult Edit(int id)
         {
             FinanceDonation financedonation = db.FinanceDonations.Find(id);
@@ -72,7 +72,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /FinanceDonation/Edit/5
-
+                [Authorize]
         [HttpPost]
         public ActionResult Edit(FinanceDonation financedonation)
         {
@@ -89,7 +89,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /FinanceDonation/Delete/5
- 
+         [Authorize]
         public ActionResult Delete(int id)
         {
             FinanceDonation financedonation = db.FinanceDonations.Find(id);
@@ -98,7 +98,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /FinanceDonation/Delete/5
-
+                [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            

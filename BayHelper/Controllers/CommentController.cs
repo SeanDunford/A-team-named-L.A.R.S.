@@ -11,11 +11,12 @@ namespace BayHelper.Com.Controllers
 { 
     public class CommentController : Controller
     {
+
         private BayHelperEntities db = new BayHelperEntities();
 
         //
         // GET: /Comment/
-
+        [Authorize]
         public ViewResult Index()
         {
             var comments = db.Comments.Include(c => c.Event).Include(c => c.User);
@@ -24,7 +25,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Comment/Details/5
-
+      [Authorize]
         public ViewResult Details(int id)
         {
             Comment comment = db.Comments.Find(id);
@@ -33,7 +34,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Comment/Create
-
+                [Authorize]
         public ActionResult Create()
         {
             ViewBag.EventID = new SelectList(db.Events, "EventID", "Title");
@@ -43,7 +44,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Comment/Create
-
+                [Authorize]
         [HttpPost]
         public ActionResult Create(Comment comment)
         {
@@ -61,7 +62,7 @@ namespace BayHelper.Com.Controllers
         
         //
         // GET: /Comment/Edit/5
- 
+         [Authorize]
         public ActionResult Edit(int id)
         {
             Comment comment = db.Comments.Find(id);
@@ -72,7 +73,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Comment/Edit/5
-
+                [Authorize]
         [HttpPost]
         public ActionResult Edit(Comment comment)
         {
@@ -89,7 +90,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Comment/Delete/5
- 
+         [Authorize]
         public ActionResult Delete(int id)
         {
             Comment comment = db.Comments.Find(id);
@@ -98,7 +99,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Comment/Delete/5
-
+                [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            

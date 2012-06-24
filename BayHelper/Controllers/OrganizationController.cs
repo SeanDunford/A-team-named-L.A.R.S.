@@ -15,7 +15,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Organization/
-
+                [Authorize]
         public ViewResult Index()
         {
             return View(db.Organizations.ToList());
@@ -23,7 +23,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Organization/Details/5
-
+                [Authorize]
         public ViewResult Details(int id)
         {
             Organization organization = db.Organizations.Find(id);
@@ -32,7 +32,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Organization/Create
-
+                [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -40,7 +40,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Organization/Create
-
+                [Authorize]
         [HttpPost]
         public ActionResult Create(Organization organization)
         {
@@ -56,7 +56,7 @@ namespace BayHelper.Com.Controllers
         
         //
         // GET: /Organization/Edit/5
- 
+         [Authorize]
         public ActionResult Edit(int id)
         {
             Organization organization = db.Organizations.Find(id);
@@ -65,7 +65,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Organization/Edit/5
-
+                [Authorize]
         [HttpPost]
         public ActionResult Edit(Organization organization)
         {
@@ -80,7 +80,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Organization/Delete/5
- 
+         [Authorize]
         public ActionResult Delete(int id)
         {
             Organization organization = db.Organizations.Find(id);
@@ -89,7 +89,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Organization/Delete/5
-
+          [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            

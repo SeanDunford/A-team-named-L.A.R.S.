@@ -15,7 +15,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Message/
-
+                [Authorize]
         public ViewResult Index()
         {
             var messages = db.Messages.Include(m => m.User).Include(m => m.User1);
@@ -24,7 +24,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Message/Details/5
-
+                [Authorize]
         public ViewResult Details(int id)
         {
             Message message = db.Messages.Find(id);
@@ -33,7 +33,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Message/Create
-
+                [Authorize]
         public ActionResult Create()
         {
             ViewBag.Sender = new SelectList(db.Users, "UserID", "LastName");
@@ -43,7 +43,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Message/Create
-
+                [Authorize]
         [HttpPost]
         public ActionResult Create(Message message)
         {
@@ -61,7 +61,7 @@ namespace BayHelper.Com.Controllers
         
         //
         // GET: /Message/Edit/5
- 
+         [Authorize]
         public ActionResult Edit(int id)
         {
             Message message = db.Messages.Find(id);
@@ -72,7 +72,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Message/Edit/5
-
+                [Authorize]
         [HttpPost]
         public ActionResult Edit(Message message)
         {
@@ -89,7 +89,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /Message/Delete/5
- 
+         [Authorize]
         public ActionResult Delete(int id)
         {
             Message message = db.Messages.Find(id);
@@ -98,7 +98,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Message/Delete/5
-
+                [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            
