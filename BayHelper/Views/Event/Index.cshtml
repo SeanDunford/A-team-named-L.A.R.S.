@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.EventsActive = "active";
 }
 
 <h2>Index</h2>
@@ -10,45 +11,67 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-
-<div class="span7">
 <table>
     <tr>
         <th>
-            Verified
+            Title
         </th>
         <th>
-            Title
+            Description
+        </th>
+        <th>
+            DateStarted
         </th>
         <th>
             DueDate
         </th>
         <th>
-            &nbsp;&nbsp;$ &nbsp;&nbsp;&nbsp;&nbsp; T &nbsp;&nbsp;&nbsp;&nbsp; M
+            Status
         </th>
         <th>
             FinanceGoal
         </th>
+        <th>
+            Address
+        </th>
+        <th>
+            User
+        </th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            <img src="../../Content/img/icons/verified.png" alt=""/>
+            @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateStarted)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.DueDate)
         </td>
         <td>
-            <img src="../../Content/img/icons/money.png" alt=""/>    <img src="../../Content/img/icons/time.png" alt=""/>    <img src="../../Content/img/icons/materials.png" alt="" />
+            @Html.DisplayFor(modelItem => item.Status)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.FinanceGoal)
         </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address.StreetAddress1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.LastName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EventID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EventID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EventID })
+        </td>
     </tr>
 }
-    </table>
-    </div>
+
+</table>
