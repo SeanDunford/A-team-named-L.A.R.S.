@@ -123,11 +123,25 @@
     <div class="span4">
         <span>
             <h3>
-                Trending</h3>
+                Closing Soon</h3>
             <ul>
-                @*@foreach (var e in (List<BayHelper.Com.Models.Event>)ViewBag.Latest) { 
-           <li> @Html.ActionLink(e.Title, "Details", "Event", e.EventID)</li>
-        }*@
+                @if (((List<BayHelper.Com.Models.Event>)ViewBag.ClosingSoon).Count() == 0)
+                {
+                    <li>No Events available</li>
+                }
+                else
+                {
+                    foreach (var e in (List<BayHelper.Com.Models.Event>)ViewBag.ClosingSoon)
+                    { 
+                    <li>@Html.ActionLink(e.Title, "Details", "Event", new { id = e.EventID }, null)
+                        @if (e.Address != null)
+                        {
+                            <text>at @e.Address.City,
+                            @e.Address.State on @e.DueDate.Value.ToShortDateString()</text> 
+                        }
+                    </li>
+                    }
+                }
             </ul>
         </span>
     </div>

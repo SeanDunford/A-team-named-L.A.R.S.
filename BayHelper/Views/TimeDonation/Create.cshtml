@@ -3,48 +3,48 @@
 @{
     ViewBag.Title = "Create";
 }
-
-<h2>Create</h2>
+<div class="well">
+<h2>Donate Time</h2>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 
 @using (Html.BeginForm()) {
+    @Html.HiddenFor(t => t.UserID)
+    @Html.HiddenFor( t=> t.EventID)
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>TimeDonation</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.EventID, "Event")
         </div>
         <div class="editor-field">
-            @Html.DropDownList("EventID", String.Empty)
-            @Html.ValidationMessageFor(model => model.EventID)
+            @Html.Display((String)ViewBag.EventTitle)
         </div>
 
-        <div class="editor-label">
+        @*<div class="editor-label">
             @Html.LabelFor(model => model.UserID, "User")
         </div>
         <div class="editor-field">
             @Html.DropDownList("UserID", String.Empty)
             @Html.ValidationMessageFor(model => model.UserID)
-        </div>
+        </div>*@
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Amount)
+            <label>Amount of Hours</label>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Amount)
             @Html.ValidationMessageFor(model => model.Amount)
         </div>
 
-        <div class="editor-label">
+@*        <div class="editor-label">
             @Html.LabelFor(model => model.Date)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Date)
             @Html.ValidationMessageFor(model => model.Date)
-        </div>
+        </div>*@
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Description)
@@ -55,11 +55,12 @@
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Add" class="btn btn-primary"/>
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn" })
+</div>
 </div>

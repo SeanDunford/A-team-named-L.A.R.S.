@@ -16,7 +16,7 @@ namespace BayHelper.Com.Controllers
             var tst = db.Events.Where(e => e.DueDate > DateTime.Now).OrderByDescending(e => e.EventID).Take(5).ToList();
             ViewBag.Latest = db.Events.Where(e => e.DueDate > DateTime.Now).OrderByDescending(e => e.EventID).Take(5).ToList();
             ViewBag.Popular = db.Events.Where(e => e.DueDate > DateTime.Now).OrderByDescending(e => e.TimeDonations.Count() + e.ResourceDonations.Count() + e.FinanceDonations.Count()).Take(5).ToList();
-            //ViewBag.Trending = db.Events.Where(e=> e.)
+            ViewBag.ClosingSoon = db.Events.Where(e => e.DueDate > DateTime.Now).OrderBy(e => e.DueDate).Take(5).ToList();
             return View();
         }
 

@@ -8,14 +8,14 @@ using System.Web.Mvc;
 using BayHelper.Com.Models;
 
 namespace BayHelper.Com.Controllers
-{ 
+{
     public class TimeDonationController : Controller
     {
         private BayHelperEntities db = new BayHelperEntities();
 
         //
         // GET: /TimeDonation/
-          [Authorize]
+        [Authorize]
         public ViewResult Index()
         {
             var timedonations = db.TimeDonations.Include(t => t.Event).Include(t => t.User);
@@ -24,7 +24,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /TimeDonation/Details/5
-          [Authorize]
+        [Authorize]
         public ViewResult Details(int id)
         {
             TimeDonation timedonation = db.TimeDonations.Find(id);
@@ -33,7 +33,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /TimeDonation/Create
-          [Authorize]
+        [Authorize]
         public ActionResult Create(int id)
         {
             var d = new TimeDonation()
@@ -41,32 +41,32 @@ namespace BayHelper.Com.Controllers
                     EventID = id,
                     UserID = WebProfile.Current.UserId
                 };
-            ViewBag.EventID = new SelectList(db.Events, "EventID", "Title");
-            ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName");
-            return View();
-        } 
+            ViewBag.EventTitle = db.Events.Find(id).Title;
+            return View(d);
+        }
 
         //
         // POST: /TimeDonation/Create
-          [Authorize]
+        [Authorize]
         [HttpPost]
         public ActionResult Create(TimeDonation timedonation)
         {
             if (ModelState.IsValid)
             {
+                timedonation.Date = DateTime.Now;
                 db.TimeDonations.Add(timedonation);
                 db.SaveChanges();
-                return RedirectToAction("Index");  
+                return RedirectToAction("Index", "Event", null);
             }
 
             ViewBag.EventID = new SelectList(db.Events, "EventID", "Title", timedonation.EventID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName", timedonation.UserID);
-            return RedirectToAction("Index", "Events", null);
+            return View();
         }
-        
+
         //
         // GET: /TimeDonation/Edit/5
-   [Authorize]
+        [Authorize]
         public ActionResult Edit(int id)
         {
             TimeDonation timedonation = db.TimeDonations.Find(id);
@@ -77,7 +77,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /TimeDonation/Edit/5
-          [Authorize]
+        [Authorize]
         [HttpPost]
         public ActionResult Edit(TimeDonation timedonation)
         {
@@ -94,7 +94,7 @@ namespace BayHelper.Com.Controllers
 
         //
         // GET: /TimeDonation/Delete/5
-   [Authorize]
+        [Authorize]
         public ActionResult Delete(int id)
         {
             TimeDonation timedonation = db.TimeDonations.Find(id);
@@ -103,10 +103,10 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /TimeDonation/Delete/5
-          [Authorize]
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
-        {            
+        {
             TimeDonation timedonation = db.TimeDonations.Find(id);
             db.TimeDonations.Remove(timedonation);
             db.SaveChanges();
