@@ -1,123 +1,130 @@
 ﻿@model BayHelper.Com.Models.Event
-
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Create</h2>
-
+<center>
+    <h2>
+        Create An Event</h2>
+</center>
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
-
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.ValidationSummary(true)
+    <center>
+        <table style="margin: auto;">
+            <tr>
+                <td>
+                    <h4>
+                        Title:</h4>
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Title, new { @style = "width:500px" })
+                    @Html.ValidationMessageFor(model => model.Title)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        Description:</h4>
+                </td>
+                <td>
+                    @Html.TextAreaFor(model => model.Description, new { @row = "4" })
+                    @Html.ValidationMessageFor(model => model.Description)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        Start Date:</h4>
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.DateStarted)
+                    @Html.ValidationMessageFor(model => model.DateStarted)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        Status:</h4>
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Status)
+                    @Html.ValidationMessageFor(model => model.Status)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        Financial Needs:</h4>
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.FinanceGoal)
+                    @Html.ValidationMessageFor(model => model.FinanceGoal)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        Street Address 1:</h4>
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Address.StreetAddress1)
+                    @Html.ValidationMessageFor(model => model.Address.StreetAddress1)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        Street Address 2:</h4>
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Address.StreetAddress1)
+                    @Html.ValidationMessageFor(model => model.Address.StreetAddress1)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        City:</h4>
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Address.City)
+                    @Html.ValidationMessageFor(m => m.Address.City)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        State:</h4>
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Address.State)
+                    @Html.ValidationMessageFor(m => m.Address.State)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h4>
+                        Zip:</h4>
+                </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Address.Zip)
+                    @Html.ValidationMessageFor(m => m.Address.Zip)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <center>
+                        <div>
+                            <input type="submit" value="Create" />
+                    </center>
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+    </center>
 
-        <div class="editor-label">
-        <br />
-            <h4>Title:</h4>
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Title, new { @style = "width:500px" } )
-            @Html.ValidationMessageFor(model => model.Title)
-        </div>
-
-        <div class="editor-label">
-            <h4>Description:</h4>
-        </div>
-        <div class="editor-field">
-            @Html.TextAreaFor(model => model.Description, new { @row = "4" })
-            @Html.ValidationMessageFor(model => model.Description)
-        </div>
-
-        <div class="editor-label">
-            <h4>Start Date:</h4>
-        </div>
-        <div class="editor-field">
-            @Html.TextBoxFor(model => model.DateStarted)
-            @Html.ValidationMessageFor(model => model.DateStarted)
-        </div>
-
-        <div class="editor-label">
-            <h4>End Date:</h4>
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DueDate)
-            @Html.ValidationMessageFor(model => model.DueDate)
-        </div>
-
-        <div class="editor-label">
-            <h4>Status:</h4>
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Status)
-            @Html.ValidationMessageFor(model => model.Status)
-        </div>
-
-        <div class="editor-label">
-            <h4>Financial Needs:</h4>
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.FinanceGoal)
-            @Html.ValidationMessageFor(model => model.FinanceGoal)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.AddressID, "Address")
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Address.StreetAddress1)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Address.StreetAddress1)
-            @Html.ValidationMessageFor(model => model.Address.StreetAddress1)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Address.StreetAddress2)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.AddressID, "Address")
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Address.StreetAddress2)
-            @Html.ValidationMessageFor(model => model.Address.StreetAddress2)
-        </div>
-        
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Creator, "User")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("Creator", String.Empty)
-            @Html.ValidationMessageFor(model => model.Creator)
-        </div>
-        
-        <div class="editor-label">
-            <h4>City:</h4>
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Address.City)
-            @Html.ValidationMessageFor(model => model.Address.City)
-        </div>
-        <div class="editor-label">
-            <h4>State:</h4>
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Address.State)
-            @Html.ValidationMessageFor(model => model.Address.State)
-        </div>
-       <div class="editor-label">
-            <h4>Zip:</h4>
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Address.Zip)
-            @Html.ValidationMessageFor(model => model.Address.Zip)
-        </div>
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-   
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
