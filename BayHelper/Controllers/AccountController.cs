@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using BayHelper.Com.Models;
+using System.Data;
 
 namespace BayHelper.Com.Controllers
 {
@@ -180,14 +181,19 @@ namespace BayHelper.Com.Controllers
 
         public ActionResult Edit(int? UserId)
         {
-            var account = db.Users.Find(UserId??);
+            var account = db.Users.Find(UserId??WebProfile.Current.UserId);
             return View(account);
         }
 
         [HttpPost]
         public ActionResult Edit(User user)
         {
-            var account = db.Users.Find();
+             if (ModelState.IsValid)
+            {
+                db.Entry(user).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return RedirectToAction("Index");
         }
 

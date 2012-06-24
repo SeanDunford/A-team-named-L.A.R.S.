@@ -32,9 +32,9 @@
                     </a>@Html.ActionLink("BayHelper", "Index", "Home", null, new { @class = "brand" })
                     <div class="nav-collapse">
                         <ul class="nav">
-                            <li class="active">@Html.ActionLink("About Us", "About", "Home")</li>
-                            <li>@Html.ActionLink("Discover Tampa Bay", "DiscoverTampaBay", "Home")</li>
-                             <li>@Html.ActionLink("Events", "Index", "Event")</li>
+                            <li class="@ViewBag.AboutActive">@Html.ActionLink("About Us", "About", "Home")</li>
+                            <li class="@ViewBag.DiscoverActive">@Html.ActionLink("Discover Tampa Bay", "DiscoverTampaBay", "Home")</li>
+                            <li class="@ViewBag.EventsActive">@Html.ActionLink("Events", "Index", "Event")</li>
                         </ul>
                         <ul class="nav pull-right">
                             <form class="navbar-search pull-left">
