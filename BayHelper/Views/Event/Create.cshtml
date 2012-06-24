@@ -42,7 +42,17 @@
                     @Html.ValidationMessageFor(model => model.DateStarted)
                 </td>
             </tr>
-            <tr>
+             <tr>
+                <td>
+                    <h4>
+                        End Date:</h4>
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.DueDate)
+                    @Html.ValidationMessageFor(model => model.DueDate)
+                </td>
+            </tr>
+          @*  <tr>
                 <td>
                     <h4>
                         Status:</h4>
@@ -51,7 +61,7 @@
                     @Html.EditorFor(model => model.Status)
                     @Html.ValidationMessageFor(model => model.Status)
                 </td>
-            </tr>
+            </tr>*@
             <tr>
                 <td>
                     <h4>
@@ -115,7 +125,7 @@
             <tr>
                 <td colspan="2">
                         <div>
-                            <input type="submit" value="Create" />
+                            <input class="btn btn-primary" type="submit" value="Create" />
                 </td>
                 <td>
                 </td>

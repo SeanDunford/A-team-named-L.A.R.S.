@@ -3,7 +3,18 @@ The base color for this template is #5c87b2. If you'd like
 to use a different color start by replacing all instances of
 #5c87b2 with your new color.
 ----------------------------------------------------------*/
+body
+{
+    height: 100%;
+}
 
+.border-right {
+	border-right:1px solid #CFCFCF;
+}
+
+.border-left {
+	border-left:1px solid #CFCFCF;
+}
 
 a:link {
     /*color: #034af3;*/
@@ -99,16 +110,17 @@ footer,
     color: #999;
     padding: 10px 0;
     line-height: normal;
-    margin: 0;
+    /*margin: 0;*/
     font-size: .9em;
     border-top: 1px solid #DFDFDF;
     width:100%;
     margin-left: auto;
 	margin-right:auto;
 	text-align: left;
-	margin-top: 20px;
+	margin-top: 65px;
    bottom:0;
    height:40px;
+   position: relative;
 }
 
 .footer-container
