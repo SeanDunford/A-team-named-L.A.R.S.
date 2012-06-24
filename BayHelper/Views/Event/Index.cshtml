@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<BayHelper.Com.Models.Event>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Events";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="row">
 <div class="span3">
 @Html.Partial("_LoggedInEvents")
 </div>
-<div class="span8 well">
+<div class="@if(User.Identity.IsAuthenticated){<text>span8</text>}) well">
 <center>
     <h2>
         List Of All Events</h2>

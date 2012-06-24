@@ -101,7 +101,5 @@ namespace BayHelper.Com.Models
         [DataType(DataType.PhoneNumber)]
         public String Phone { get; set; }
 
-
-
     }
 }
