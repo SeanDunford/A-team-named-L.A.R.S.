@@ -17,6 +17,12 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.Description)
     </div>
+    <br />
+   <h4> <div class="display-label">Time Donated</div></h4>
+    <div class="display-field">
+        @Model.TimeDonations.Sum(s => s.Amount)
+    </div>
+
         <br />
     <h4><div class="display-label">DateStarted:</div></h4>
     <div class="display-field">
@@ -50,12 +56,13 @@
     <br />
 </fieldset>
 <p style="text-align:right;">
-   @Html.ActionLink("Vote", "Index", null, new { @class="btn"}) <text>|</text>  <!--Dummy Vote button-->
+@if (User.Identity.IsAuthenticated && !String.IsNullOrEmpty(Model.LaborDescription)) { 
+        @Html.ActionLink("Donate Time", "Create", "TimeDonation", new { id = Model.EventID }, new { @class = "btn btn-primary" }) <text>|</text> 
+    } 
    @if (Model.Creator == BayHelper.Com.Models.WebProfile.Current.UserId)
    { 
     @Html.ActionLink("Edit", "Edit", new { id = Model.EventID }, new { @class = "btn" }) <text>|</text>
    }
-    @Html.ActionLink("Back to List", "Index", null, new { @class="btn"})  <text>|</text>
-
+    @Html.ActionLink("Back to List", "Index", null, new { @class="btn"})
 </p>
 </div>

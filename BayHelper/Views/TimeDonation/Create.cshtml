@@ -16,12 +16,9 @@
     <fieldset>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.EventID, "Event")
+            <h4>@ViewBag.EventTitle</h4>
         </div>
-        <div class="editor-field">
-            @Html.Display((String)ViewBag.EventTitle)
-        </div>
-
+        <br />
         @*<div class="editor-label">
             @Html.LabelFor(model => model.UserID, "User")
         </div>
