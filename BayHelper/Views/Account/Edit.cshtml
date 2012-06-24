@@ -18,6 +18,7 @@
     @Html.HiddenFor(model => model.OrganizationUser)
     @Html.HiddenFor(model => model.OrganizationID)
     @Html.HiddenFor(model => model.Address.AddressID)
+    @Html.HiddenFor(model => model.DateRegistered)
     <table style="margin: auto;border:0px">
         <tr>
             <td>
@@ -45,8 +46,8 @@
                     Email:</h4>
             </td>
             <td>
+                @Html.HiddenFor(model => model.Email)
                 @Html.DisplayTextFor(model => model.Email)
-                @Html.ValidationMessageFor(model => model.Email)
             </td>
         </tr>
        <tr>
