@@ -95,5 +95,13 @@ namespace BayHelper.Com.Models
         [Display(Name = "Zip")]
         [StringLength(10, ErrorMessage = "The Zip Code must be at most 10 characters long.")]
         public String Zip { get; set; }
+
+        [Display(Name = "Phone")]
+        [StringLength(10, ErrorMessage = "The Phone  must be at most 10 characters long.")]
+        [DataType(DataType.PhoneNumber)]
+        public String Phone { get; set; }
+
+
+
     }
 }
