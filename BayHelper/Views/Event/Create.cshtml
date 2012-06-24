@@ -32,6 +32,16 @@
                     @Html.ValidationMessageFor(model => model.Description)
                 </td>
             </tr>
+             <tr>
+                <td>
+                    <h4>
+                        Phone:</h4>
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.Phone)
+                    @Html.ValidationMessageFor(model => model.Phone)
+                </td>
+            </tr>
             <tr>
                 <td>
                     <h4>
@@ -145,13 +155,10 @@
             <tr>
                 <td colspan="2">
                     <hr />
-                        <div style="text-align:left">
                             <input class="btn btn-primary" type="submit" value="Create" style="width:100%" />
-                            </div>
-                </td>
-                <td>
                 </td>
             </tr>
         </table>
+                    @Html.ActionLink("Back To List", "Index", "Events", new { @class = "btn", @style = "width:100%;" })
 }
 </div>

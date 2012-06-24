@@ -293,6 +293,8 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BayHelperModelDbContext.cs</LastGenOutput>
     </None>
+    <Content Include="Views\Event\InvolvedEvents.cshtml" />
+    <Content Include="Views\Event\MyEvents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

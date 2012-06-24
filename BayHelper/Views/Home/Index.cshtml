@@ -84,7 +84,7 @@
                 {
                     foreach (var e in (List<BayHelper.Com.Models.Event>)ViewBag.Latest)
                     { 
-                    <li>@Html.ActionLink(e.Title, "Details", "Event", e.EventID)
+                    <li>@Html.ActionLink(e.Title, "Details", "Event", new { id = e.EventID }, null)
                         @if (e.Address != null)
                         {
                             <text>at @e.Address.City,
@@ -108,7 +108,7 @@
                 {
                     foreach (var e in (List<BayHelper.Com.Models.Event>)ViewBag.Popular)
                     { 
-                    <li>@Html.ActionLink(e.Title, "Details", "Event", e.EventID)
+                    <li>@Html.ActionLink(e.Title, "Details", "Event", new { id = e.EventID }, null)
                         @if (e.Address != null)
                         {
                             <text>at @e.Address.City,
