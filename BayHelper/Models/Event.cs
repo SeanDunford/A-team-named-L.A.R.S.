@@ -18,8 +18,8 @@ namespace BayHelper.Com.Models
         {
             this.Comments = new HashSet<Comment>();
             this.FinanceDonations = new HashSet<FinanceDonation>();
-            this.Resources = new HashSet<Resource>();
-            this.Tasks = new HashSet<Task>();
+            this.ResourceDonations = new HashSet<ResourceDonation>();
+            this.TimeDonations = new HashSet<TimeDonation>();
         }
     
         public int EventID { get; set; }
@@ -28,16 +28,20 @@ namespace BayHelper.Com.Models
         public Nullable<System.DateTime> DateStarted { get; set; }
         public Nullable<System.DateTime> DueDate { get; set; }
         public Nullable<byte> Status { get; set; }
+        public string LaborDescription { get; set; }
+        public string ResourcesDescription { get; set; }
         public Nullable<int> FinanceGoal { get; set; }
         public Nullable<int> AddressID { get; set; }
         public Nullable<int> Creator { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
     
         public virtual Address Address { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual User User { get; set; }
         public virtual ICollection<FinanceDonation> FinanceDonations { get; set; }
-        public virtual ICollection<Resource> Resources { get; set; }
-        public virtual ICollection<Task> Tasks { get; set; }
+        public virtual ICollection<ResourceDonation> ResourceDonations { get; set; }
+        public virtual ICollection<TimeDonation> TimeDonations { get; set; }
     }
     
 }

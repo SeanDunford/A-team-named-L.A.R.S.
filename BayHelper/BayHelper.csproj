@@ -72,9 +72,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\OrganizationController.cs" />
-    <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Controllers\ResourceDonationController.cs" />
-    <Compile Include="Controllers\TaskController.cs" />
     <Compile Include="Controllers\TimeDonationController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -114,13 +112,7 @@
     <Compile Include="Models\Organization.cs">
       <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Resource.cs">
-      <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\ResourceDonation.cs">
-      <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Task.cs">
       <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TimeDonation.cs">
@@ -272,6 +264,11 @@
     <None Include="Content\js\README.md" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\DiscoverTampaBay.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Event\Details.cshtml" />
+    <Content Include="Views\Event\Create.cshtml" />
+    <Content Include="Views\Event\Edit.cshtml" />
+    <Content Include="Views\Event\Delete.cshtml" />
     <EntityDeploy Include="Models\BayHelperModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BayHelperModel.Designer.cs</LastGenOutput>
@@ -284,11 +281,11 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BayHelperDbContextModel.cs</LastGenOutput>
     </None>
-    <Content Include="Views\Event\Index.cshtml" />
-    <Content Include="Views\Event\Details.cshtml" />
-    <Content Include="Views\Event\Create.cshtml" />
-    <Content Include="Views\Event\Edit.cshtml" />
-    <Content Include="Views\Event\Delete.cshtml" />
+    <Content Include="Views\TimeDonation\Index.cshtml" />
+    <Content Include="Views\TimeDonation\Details.cshtml" />
+    <Content Include="Views\TimeDonation\Create.cshtml" />
+    <Content Include="Views\TimeDonation\Edit.cshtml" />
+    <Content Include="Views\TimeDonation\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

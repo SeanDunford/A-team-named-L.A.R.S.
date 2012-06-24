@@ -15,13 +15,13 @@ namespace BayHelper.Com.Models
     public partial class TimeDonation
     {
         public int TimeDonationID { get; set; }
-        public Nullable<int> TaskID { get; set; }
+        public Nullable<int> EventID { get; set; }
         public Nullable<int> UserID { get; set; }
         public Nullable<int> Amount { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
-        public string Status { get; set; }
+        public string Description { get; set; }
     
-        public virtual Task Task { get; set; }
+        public virtual Event Event { get; set; }
         public virtual User User { get; set; }
     }
     

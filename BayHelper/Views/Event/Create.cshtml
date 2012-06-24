@@ -12,35 +12,34 @@
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>Event</legend>
 
         <div class="editor-label">
-            Title:
+        <br />
+            <h4>Title:</h4>
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Title)
+            @Html.EditorFor(model => model.Title, new { @style = "width:500px" } )
             @Html.ValidationMessageFor(model => model.Title)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Description)
+            <h4>Description:</h4>
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Description)
+            @Html.TextAreaFor(model => model.Description, new { @row = "4" })
             @Html.ValidationMessageFor(model => model.Description)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DateStarted)
+            <h4>Start Date:</h4>
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DateStarted)
+            @Html.TextBoxFor(model => model.DateStarted)
             @Html.ValidationMessageFor(model => model.DateStarted)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DueDate)
+            <h4>End Date:</h4>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.DueDate)
@@ -48,7 +47,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Status)
+            <h4>Status:</h4>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Status)
@@ -56,7 +55,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.FinanceGoal)
+            <h4>Financial Needs:</h4>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.FinanceGoal)
@@ -76,6 +75,9 @@
         <div class="editor-label">
             @Html.LabelFor(model => model.Address.StreetAddress2)
         </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AddressID, "Address")
+        </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Address.StreetAddress2)
             @Html.ValidationMessageFor(model => model.Address.StreetAddress2)
@@ -89,10 +91,31 @@
             @Html.ValidationMessageFor(model => model.Creator)
         </div>
         
+        <div class="editor-label">
+            <h4>City:</h4>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address.City)
+            @Html.ValidationMessageFor(model => model.Address.City)
+        </div>
+        <div class="editor-label">
+            <h4>State:</h4>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address.State)
+            @Html.ValidationMessageFor(model => model.Address.State)
+        </div>
+       <div class="editor-label">
+            <h4>Zip:</h4>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address.Zip)
+            @Html.ValidationMessageFor(model => model.Address.Zip)
+        </div>
         <p>
             <input type="submit" value="Create" />
         </p>
-    </fieldset>
+   
 }
 
 <div>

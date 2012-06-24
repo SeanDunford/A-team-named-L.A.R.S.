@@ -33,6 +33,7 @@ namespace BayHelper.Com.Models
         public Nullable<int> AddressID { get; set; }
         public Nullable<int> Rating { get; set; }
         public Nullable<System.DateTime> DateRegistered { get; set; }
+        public string Phone { get; set; }
         public Nullable<bool> OrganizationUser { get; set; }
         public Nullable<int> OrganizationID { get; set; }
     

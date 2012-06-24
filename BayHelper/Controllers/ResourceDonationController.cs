@@ -18,7 +18,7 @@ namespace BayHelper.Com.Controllers
 
         public ViewResult Index()
         {
-            var resourcedonations = db.ResourceDonations.Include(r => r.Resource).Include(r => r.User);
+            var resourcedonations = db.ResourceDonations.Include(r => r.Event).Include(r => r.User);
             return View(resourcedonations.ToList());
         }
 
@@ -36,7 +36,7 @@ namespace BayHelper.Com.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.ResorceID = new SelectList(db.Resources, "ResourceID", "Description");
+            ViewBag.EventID = new SelectList(db.Events, "EventID", "Title");
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName");
             return View();
         } 
@@ -54,7 +54,7 @@ namespace BayHelper.Com.Controllers
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.ResorceID = new SelectList(db.Resources, "ResourceID", "Description", resourcedonation.ResorceID);
+            ViewBag.EventID = new SelectList(db.Events, "EventID", "Title", resourcedonation.EventID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName", resourcedonation.UserID);
             return View(resourcedonation);
         }
@@ -65,7 +65,7 @@ namespace BayHelper.Com.Controllers
         public ActionResult Edit(int id)
         {
             ResourceDonation resourcedonation = db.ResourceDonations.Find(id);
-            ViewBag.ResorceID = new SelectList(db.Resources, "ResourceID", "Description", resourcedonation.ResorceID);
+            ViewBag.EventID = new SelectList(db.Events, "EventID", "Title", resourcedonation.EventID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName", resourcedonation.UserID);
             return View(resourcedonation);
         }
@@ -82,7 +82,7 @@ namespace BayHelper.Com.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.ResorceID = new SelectList(db.Resources, "ResourceID", "Description", resourcedonation.ResorceID);
+            ViewBag.EventID = new SelectList(db.Events, "EventID", "Title", resourcedonation.EventID);
             ViewBag.UserID = new SelectList(db.Users, "UserID", "LastName", resourcedonation.UserID);
             return View(resourcedonation);
         }
