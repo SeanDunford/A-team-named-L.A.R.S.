@@ -78,46 +78,46 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Address.cs">
-      <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BayHelperDbContextModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BayHelperDbContextModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\BayHelperDbContextModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
+      <DependentUpon>BayHelperModelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\BayHelperModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BayHelperModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\BayHelperModelDbContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BayHelperModelDbContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BayHelperModelDbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BayHelperModelDbContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Comment.cs">
-      <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
+      <DependentUpon>BayHelperModelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Event.cs">
-      <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
+      <DependentUpon>BayHelperModelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FinanceDonation.cs">
-      <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
+      <DependentUpon>BayHelperModelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Message.cs">
-      <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
+      <DependentUpon>BayHelperModelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Organization.cs">
-      <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
+      <DependentUpon>BayHelperModelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ResourceDonation.cs">
-      <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
+      <DependentUpon>BayHelperModelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TimeDonation.cs">
-      <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
+      <DependentUpon>BayHelperModelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>BayHelperDbContextModel.tt</DependentUpon>
+      <DependentUpon>BayHelperModelDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WebProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -273,18 +273,6 @@
     <Content Include="Views\Event\Create.cshtml" />
     <Content Include="Views\Event\Edit.cshtml" />
     <Content Include="Views\Event\Delete.cshtml" />
-    <EntityDeploy Include="Models\BayHelperModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BayHelperModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Models\BayHelperDbContextModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BayHelperDbContextModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="Models\BayHelperDbContextModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BayHelperDbContextModel.cs</LastGenOutput>
-    </None>
     <Content Include="Views\TimeDonation\Index.cshtml" />
     <Content Include="Views\TimeDonation\Details.cshtml" />
     <Content Include="Views\TimeDonation\Create.cshtml" />
@@ -293,6 +281,18 @@
     <Content Include="Views\Account\Edit.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Event\_LoggedInEvents.cshtml" />
+    <EntityDeploy Include="Models\BayHelperModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BayHelperModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\BayHelperModelDbContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BayHelperModelDbContext.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Models\BayHelperModelDbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BayHelperModelDbContext.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

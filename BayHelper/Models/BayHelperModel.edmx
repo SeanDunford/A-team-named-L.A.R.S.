@@ -104,6 +104,7 @@
           <Property Name="Description" Type="varchar" MaxLength="2500" />
           <Property Name="DateStarted" Type="datetime" />
           <Property Name="DueDate" Type="datetime" />
+          <Property Name="Ranking" Type="int" />
           <Property Name="Status" Type="tinyint" />
           <Property Name="LaborDescription" Type="varchar" MaxLength="2500" />
           <Property Name="ResourcesDescription" Type="varchar" MaxLength="2500" />
@@ -459,6 +460,7 @@
           <Property Name="Description" Type="String" MaxLength="2500" Unicode="false" FixedLength="false" />
           <Property Name="DateStarted" Type="DateTime" />
           <Property Name="DueDate" Type="DateTime" />
+          <Property Name="Ranking" Type="Int32" />
           <Property Name="Status" Type="Byte" />
           <Property Name="LaborDescription" Type="String" MaxLength="2500" Unicode="false" FixedLength="false" />
           <Property Name="ResourcesDescription" Type="String" MaxLength="2500" Unicode="false" FixedLength="false" />
@@ -759,6 +761,7 @@
             <ScalarProperty Name="Description" ColumnName="Description" />
             <ScalarProperty Name="DateStarted" ColumnName="DateStarted" />
             <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+            <ScalarProperty Name="Ranking" ColumnName="Ranking" />
             <ScalarProperty Name="Status" ColumnName="Status" />
             <ScalarProperty Name="LaborDescription" ColumnName="LaborDescription" />
             <ScalarProperty Name="ResourcesDescription" ColumnName="ResourcesDescription" />
@@ -840,7 +843,7 @@
       <Diagram Name="BayHelperModel" ZoomLevel="64">
         <EntityTypeShape EntityType="BayHelperModel.Address" Width="1.5" PointX="0.75" PointY="9.25" Height="2.5571907552083317" IsExpanded="true" />
         <EntityTypeShape EntityType="BayHelperModel.Comment" Width="1.5" PointX="11.25" PointY="9.25" Height="2.7494921874999996" IsExpanded="true" />
-        <EntityTypeShape EntityType="BayHelperModel.Event" Width="1.5" PointX="3" PointY="8.25" Height="4.6725065104166639" IsExpanded="true" />
+        <EntityTypeShape EntityType="BayHelperModel.Event" Width="1.5" PointX="3" PointY="8.125" Height="4.8648079427083353" IsExpanded="true" />
         <EntityTypeShape EntityType="BayHelperModel.FinanceDonation" Width="1.5" PointX="8.25" PointY="6.5" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="BayHelperModel.Message" Width="1.5" PointX="8.25" PointY="9.375" Height="2.3648893229166674" IsExpanded="true" />
         <EntityTypeShape EntityType="BayHelperModel.Organization" Width="1.5" PointX="3.75" PointY="4.5" Height="2.1725878906249996" IsExpanded="true" />
@@ -852,21 +855,23 @@
           <ConnectorPoint PointX="3" PointY="10.528595377604166" />
         </AssociationConnector>
         <AssociationConnector Association="BayHelperModel.FK_User_Address" ManuallyRouted="false">
-          <ConnectorPoint PointX="1.5" PointY="9.25" />
-          <ConnectorPoint PointX="1.5" PointY="8.15625" />
-          <ConnectorPoint PointX="3.2604166666666665" PointY="8.15625" />
-          <ConnectorPoint PointX="3.4270833333333335" PointY="8.15625" />
-          <ConnectorPoint PointX="3.8697936666666664" PointY="8.15625" />
-          <ConnectorPoint PointX="4.0364603333333333" PointY="8.15625" />
-          <ConnectorPoint PointX="6" PointY="8.15625" />
+          <ConnectorPoint PointX="2.2499999999999996" PointY="11.807190755208332" />
+          <ConnectorPoint PointX="2.625" PointY="12.182190755208332" />
+          <ConnectorPoint PointX="2.625" PointY="13.364807942708335" />
+          <ConnectorPoint PointX="4.0729191666666669" PointY="13.364807942708335" />
+          <ConnectorPoint PointX="4.2395858333333329" PointY="13.364807942708335" />
+          <ConnectorPoint PointX="5.6261528461538468" PointY="13.364807942708335" />
+          <ConnectorPoint PointX="6.0011528461538459" PointY="12.989807942708335" />
         </AssociationConnector>
         <AssociationConnector Association="BayHelperModel.FK_Comment_Event" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.75" PointY="12.922506510416664" />
+          <ConnectorPoint PointX="3.75" PointY="12.989807942708335" />
           <ConnectorPoint PointX="3.75" PointY="13.239807942708335" />
           <ConnectorPoint PointX="4.0729191666666669" PointY="13.239807942708335" />
           <ConnectorPoint PointX="4.2395858333333329" PointY="13.239807942708335" />
-          <ConnectorPoint PointX="6.666666666666667" PointY="13.239807942708335" />
-          <ConnectorPoint PointX="6.833333333333333" PointY="13.239807942708335" />
+          <ConnectorPoint PointX="5.6678195128205138" PointY="13.239807942708335" />
+          <ConnectorPoint PointX="5.83448617948718" PointY="13.239807942708335" />
+          <ConnectorPoint PointX="6.6984955897435894" PointY="13.239807942708335" />
+          <ConnectorPoint PointX="6.8651622564102555" PointY="13.239807942708335" />
           <ConnectorPoint PointX="10.875" PointY="13.239807942708335" />
           <ConnectorPoint PointX="10.875" PointY="10.62474609375" />
           <ConnectorPoint PointX="11.25" PointY="10.62474609375" />
@@ -878,32 +883,32 @@
           <ConnectorPoint PointX="11.25" PointY="11.900940755208334" />
         </AssociationConnector>
         <AssociationConnector Association="BayHelperModel.FK_Event_User" ManuallyRouted="false">
-          <ConnectorPoint PointX="6" PointY="10.586253255208332" />
-          <ConnectorPoint PointX="4.5" PointY="10.586253255208332" />
+          <ConnectorPoint PointX="6" PointY="10.557403971354168" />
+          <ConnectorPoint PointX="4.5" PointY="10.557403971354168" />
         </AssociationConnector>
         <AssociationConnector Association="BayHelperModel.FK_FinanceDonation_Event" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.34375" PointY="8.25" />
-          <ConnectorPoint PointX="3.34375" PointY="7.3987939453125" />
-          <ConnectorPoint PointX="3.8697936666666664" PointY="7.3987939453124989" />
-          <ConnectorPoint PointX="4.0364603333333333" PointY="7.3987939453125" />
-          <ConnectorPoint PointX="4.822916666666667" PointY="7.3987939453124989" />
-          <ConnectorPoint PointX="4.989583333333333" PointY="7.3987939453125" />
-          <ConnectorPoint PointX="6.666666666666667" PointY="7.3987939453124989" />
-          <ConnectorPoint PointX="6.833333333333333" PointY="7.3987939453125" />
-          <ConnectorPoint PointX="8.25" PointY="7.3987939453125" />
+          <ConnectorPoint PointX="3.34375" PointY="8.125" />
+          <ConnectorPoint PointX="3.34375" PointY="7.4300434453125" />
+          <ConnectorPoint PointX="3.8697936666666664" PointY="7.4300434453124993" />
+          <ConnectorPoint PointX="4.0364603333333333" PointY="7.4300434453125" />
+          <ConnectorPoint PointX="6.666666666666667" PointY="7.4300434453124993" />
+          <ConnectorPoint PointX="6.833333333333333" PointY="7.4300434453125" />
+          <ConnectorPoint PointX="7.0729191666666669" PointY="7.4300434453124993" />
+          <ConnectorPoint PointX="7.2395858333333329" PointY="7.4300434453125" />
+          <ConnectorPoint PointX="8.25" PointY="7.4300434453125" />
         </AssociationConnector>
         <AssociationConnector Association="BayHelperModel.FK_ResourceDonations_Events" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.1562525" PointY="12.922506510416664" />
+          <ConnectorPoint PointX="4.1562525" PointY="12.989807942708335" />
           <ConnectorPoint PointX="4.1562525" PointY="14.557444661458334" />
           <ConnectorPoint PointX="8.25" PointY="14.557444661458334" />
         </AssociationConnector>
         <AssociationConnector Association="BayHelperModel.FK_TimeDonations_Events" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.953127" PointY="8.25" />
+          <ConnectorPoint PointX="3.953127" PointY="8.125" />
           <ConnectorPoint PointX="3.953127" PointY="6.922587890625" />
-          <ConnectorPoint PointX="4.822916666666667" PointY="6.9225878906249987" />
-          <ConnectorPoint PointX="4.989583333333333" PointY="6.922587890625" />
           <ConnectorPoint PointX="6.666666666666667" PointY="6.9225878906249987" />
           <ConnectorPoint PointX="6.833333333333333" PointY="6.922587890625" />
+          <ConnectorPoint PointX="7.0729191666666669" PointY="6.9225878906249987" />
+          <ConnectorPoint PointX="7.2395858333333329" PointY="6.922587890625" />
           <ConnectorPoint PointX="8" PointY="6.922587890625" />
           <ConnectorPoint PointX="8" PointY="6.25" />
           <ConnectorPoint PointX="10.875" PointY="6.25" />
@@ -923,19 +928,19 @@
           <ConnectorPoint PointX="8.25" PointY="9.9037223307291669" />
         </AssociationConnector>
         <AssociationConnector Association="BayHelperModel.FK_User_Organization" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.90625" PointY="6.672587890625" />
-          <ConnectorPoint PointX="4.90625" PointY="8.140625" />
-          <ConnectorPoint PointX="6" PointY="8.140625" />
+          <ConnectorPoint PointX="5.25" PointY="5.5862939453125" />
+          <ConnectorPoint PointX="6.75" PointY="5.5862939453125" />
+          <ConnectorPoint PointX="6.75" PointY="8.125" />
         </AssociationConnector>
         <AssociationConnector Association="BayHelperModel.FK_ResourceDonation_User" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="12.989807942708335" />
-          <ConnectorPoint PointX="6.75" PointY="13.934969830729166" />
+          <ConnectorPoint PointX="6.7818289230769224" PointY="12.989807942708335" />
+          <ConnectorPoint PointX="6.7818289230769224" PointY="13.934969830729166" />
           <ConnectorPoint PointX="8.25" PointY="13.934969830729166" />
         </AssociationConnector>
         <AssociationConnector Association="BayHelperModel.FK_TimeDonation_User" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="8.125" />
-          <ConnectorPoint PointX="6.75" PointY="5.75" />
-          <ConnectorPoint PointX="11.25" PointY="5.75" />
+          <ConnectorPoint PointX="7.1562525" PointY="8.125" />
+          <ConnectorPoint PointX="7.1562525" PointY="5.91814697265625" />
+          <ConnectorPoint PointX="11.25" PointY="5.91814697265625" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
