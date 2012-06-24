@@ -14,9 +14,11 @@ namespace BayHelper.Com.Controllers
         BayHelperEntities db = new BayHelperEntities();
         //
         // GET: /Account/LogOn
+        [Authorize]
         public ActionResult Index()
         {
-            return View();
+            var user = db.Users.Find(WebProfile.GetProfile(User.Identity.Name).UserId);
+            return View(user);
         }
 
         public ActionResult LogOn()
@@ -26,7 +28,6 @@ namespace BayHelper.Com.Controllers
 
         //
         // POST: /Account/LogOn
-
         [HttpPost]
         public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
