@@ -3,10 +3,10 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<center><h2>
+<div style = "text-align:center;"><h2>
     Account Details
     @Html.ActionLink("Edit", "Edit", null, new { @class = "btn" })
-</h2></center>
+</h2>
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 
@@ -115,9 +115,8 @@
 
 
 <div>
-<center>
 <br/>
 <br/>
     @Html.ActionLink("Back To Home","", "Home")
 </div>
-</center>
+</div>
