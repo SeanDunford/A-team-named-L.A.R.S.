@@ -88,7 +88,6 @@ namespace BayHelper.Com.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-
                     var user = new User
                     {
                         Address = new Address
