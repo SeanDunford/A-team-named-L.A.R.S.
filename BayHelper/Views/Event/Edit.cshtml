@@ -4,12 +4,16 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<div class="well">
 <h2>Edit</h2>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
-
+@Html.HiddenFor(e => e.Address.AddressID)
+@Html.HiddenFor(e => e.EventID)
+@Html.HiddenFor(e => e.Status)
+@Html.HiddenFor(e => e.Creator)
+@Html.HiddenFor(e => e.Ranking)
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
@@ -32,7 +36,16 @@
             @Html.EditorFor(model => model.Description)
             @Html.ValidationMessageFor(model => model.Description)
         </div>
-
+        <tr>
+                <td>
+                    <h4>
+                        Phone:</h4>
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.Phone)
+                    @Html.ValidationMessageFor(model => model.Phone)
+                </td>
+            </tr>
         <div class="editor-label">
             @Html.LabelFor(model => model.DateStarted)
         </div>
@@ -89,4 +102,5 @@
 
 <div>
     @Html.ActionLink("Back to List", "Index")
+</div>
 </div>

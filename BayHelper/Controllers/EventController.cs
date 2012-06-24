@@ -31,6 +31,23 @@ namespace BayHelper.Com.Controllers
             return View(e);
         }
 
+        [Authorize]
+        public ViewResult MyEvents()
+        {
+            var events = db.Events.Where(e => e.Creator == WebProfile.Current.UserId);
+            return View(events);
+        }
+
+        [Authorize]
+        public ViewResult InvolvedEvents()
+        {
+            var finance = db.FinanceDonations.Where(f => f.UserID == WebProfile.Current.UserId && DateTime.Now < f.Event.DueDate).Select(e => e.EventID).ToList();
+            var resource = db.ResourceDonations.Where(f => f.UserID == WebProfile.Current.UserId && DateTime.Now < f.Event.DueDate).Select(e => e.EventID).ToList();
+            var time = db.TimeDonations.Where(f => f.UserID == WebProfile.Current.UserId && DateTime.Now < f.Event.DueDate).Select(e => e.EventID).ToList();
+            var events = db.Events.Where(e => finance.Contains(e.EventID) || resource.Contains(e.EventID) || time.Contains(e.EventID));
+            return View(events);
+        }
+
         //
         // GET: /Event/Create
         [Authorize]
@@ -58,9 +75,6 @@ namespace BayHelper.Com.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress1", e.AddressID);
-            ViewBag.Creator = new SelectList(db.Users, "UserID", "LastName", e.Creator);
             return View(e);
         }
 
@@ -70,9 +84,14 @@ namespace BayHelper.Com.Controllers
         public ActionResult Edit(int id)
         {
             Event e = db.Events.Find(id);
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress1", e.AddressID);
-            ViewBag.Creator = new SelectList(db.Users, "UserID", "LastName", e.Creator);
-            return View(e);
+            if (e.Creator == WebProfile.Current.UserId)
+            {
+                return View(e);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
 
         //
@@ -83,12 +102,13 @@ namespace BayHelper.Com.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(e).State = EntityState.Modified;
-                db.SaveChanges();
+                if (e.Creator == WebProfile.Current.UserId)
+                {
+                    db.Entry(e).State = EntityState.Modified;
+                    db.SaveChanges(); 
+                }
                 return RedirectToAction("Index");
             }
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "StreetAddress1", e.AddressID);
-            ViewBag.Creator = new SelectList(db.Users, "UserID", "LastName", e.Creator);
             return View(e);
         }
 
@@ -98,7 +118,14 @@ namespace BayHelper.Com.Controllers
         public ActionResult Delete(int id)
         {
             Event e = db.Events.Find(id);
-            return View(e);
+            if (e.Creator == WebProfile.Current.UserId)
+            {
+                return View(e);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
 
         //
@@ -108,8 +135,11 @@ namespace BayHelper.Com.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Event e = db.Events.Find(id);
-            db.Events.Remove(e);
-            db.SaveChanges();
+            if (e.Creator == WebProfile.Current.UserId)
+            {
+                db.Events.Remove(e);
+                db.SaveChanges(); 
+            }
             return RedirectToAction("Index");
         }
 
