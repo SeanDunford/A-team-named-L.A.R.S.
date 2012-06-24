@@ -50,10 +50,12 @@
     <br />
 </fieldset>
 <p style="text-align:right;">
+   @Html.ActionLink("Vote", "Index", null, new { @class="btn"}) <text>|</text>  <!--Dummy Vote button-->
    @if (Model.Creator == BayHelper.Com.Models.WebProfile.Current.UserId)
    { 
     @Html.ActionLink("Edit", "Edit", new { id = Model.EventID }, new { @class = "btn" }) <text>|</text>
    }
-    @Html.ActionLink("Back to List", "Index", null, new { @class="btn"})
+    @Html.ActionLink("Back to List", "Index", null, new { @class="btn"})  <text>|</text>
+
 </p>
 </div>
