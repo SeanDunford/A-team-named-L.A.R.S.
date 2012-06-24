@@ -22,6 +22,18 @@ namespace BayHelper.Com.Controllers
             return View(events.ToList());
         }
 
+        // GET: /Event/Details/5
+        public ActionResult Vote(int id)
+        {
+            Event e = db.Events.Find(id);
+            if (e.Ranking == null)
+                e.Ranking = 0;
+            e.Ranking++;
+            db.Entry(e).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         //
         // GET: /Event/Details/5
         public ViewResult Details(int id)

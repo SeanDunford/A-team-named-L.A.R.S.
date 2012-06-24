@@ -43,7 +43,14 @@
         {
             <tr>
             <td>
-            11
+                @if (item.Ranking == null)
+                { 
+                    <text>0</text>
+                }
+                else
+                { 
+                    <text>@item.Ranking</text>
+                }
             </td>
                 <td>
                     <img src="../../Content/img/icons/verified.png" alt="" />

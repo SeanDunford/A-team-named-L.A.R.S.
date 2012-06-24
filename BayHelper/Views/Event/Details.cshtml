@@ -59,6 +59,10 @@
 @if (User.Identity.IsAuthenticated && !String.IsNullOrEmpty(Model.LaborDescription)) { 
         @Html.ActionLink("Donate Time", "Create", "TimeDonation", new { id = Model.EventID }, new { @class = "btn btn-primary" }) <text>|</text> 
     } 
+
+    @if (User.Identity.IsAuthenticated) { 
+    @Html.ActionLink("Vote", "Vote", "Event", new { id = Model.EventID }, new { @class = "btn" }) <text>|</text>  <!--Dummy Vote button-->
+    }
    @if (Model.Creator == BayHelper.Com.Models.WebProfile.Current.UserId)
    { 
     @Html.ActionLink("Edit", "Edit", new { id = Model.EventID }, new { @class = "btn" }) <text>|</text>
