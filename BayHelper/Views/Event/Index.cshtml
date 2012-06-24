@@ -1,55 +1,79 @@
 ﻿@model IEnumerable<BayHelper.Com.Models.Event>
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<center><h2>List Of All Events</h2></center>
-
+<center>
+    <h2>
+        List Of All Events</h2>
+</center>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-
-
 <div class="span10">
-<table style="margin: auto;">
-    <tr>
-        <th>
-            Verified
-        </th>
-        <th>
-            Title
-        </th>
-        <th>
-            DueDate
-        </th>
-        <th>
-            &nbsp;&nbsp;$ &nbsp;&nbsp;&nbsp;&nbsp; T &nbsp;&nbsp;&nbsp;&nbsp; M
-        </th>
-        <th>
-            FinanceGoal
-        </th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            <img src="../../Content/img/icons/verified.png" alt=""/>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DueDate)
-        </td>
-        <td>
-            <img src="../../Content/img/icons/money.png" alt=""/>    <img src="../../Content/img/icons/time.png" alt=""/>    <img src="../../Content/img/icons/materials.png" alt="" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FinanceGoal)
-        </td>
-    </tr>
-}
+    <table style="margin: auto;">
+        <tr>
+            <th>
+                Rank
+            </th>
+            <th>
+                Vote
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Event Date/Time
+            </th>
+            <th>
+                $
+            </th>
+            <th>
+                T
+            </th>
+            <th>
+                M
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+            <td>
+            11
+            </td>
+                <td>
+                    <img src="../../Content/img/icons/verified.png" alt="" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DueDate)
+                </td>
+                <td>
+                @{
+            if (item.FinanceGoal != 0 && item.FinanceGoal != null)
+            {
+                <img src="../../Content/img/icons/money.png" alt="" />
+            }
+                }
+                </td>
+                <td>
+                @{
+            if (item.LaborDescription != string.Empty && item.LaborDescription != null)
+            {
+                <img src="../../Content/img/icons/time.png" alt="" />
+            }
+                }
+                <td>
+                @{
+            if (item.ResourcesDescription != string.Empty && item.ResourcesDescription != null)
+            {
+                <img src="../../Content/img/icons/materials.png" alt="" />
+            }
+                }
+                </td>
+            </tr>
+        }
     </table>
-    </div>
+</div>
